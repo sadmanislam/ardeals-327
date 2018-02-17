@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html>
+	
+		<head><title>SRS</title>
+
+			<style>
+				body {
+					background-color:#CDEEEC;
+					font-family:Times;
+					color:#55423E;
+				}
+
+				table {		
+                    
+				    <!-background-color: DarkGray;->
+                    
+				}
+
+				table th {
+				    color: black;
+				    background-color: #F5F5F5;
+				}
+				table tr:nth-child(even) {
+				    background-color: #eee;
+				}
+				table tr:nth-child(odd) {
+				    background-color: #fff;
+				}
+
+				th, td, tr {
+				    padding: 7px;
+				    padding-left: 15px;
+				}
+                
+                h1 {
+                margin-left: 15px;
+                }
+
+                h2 {
+                margin-left: 30px;
+                }
+                h3{
+                    margin-left: 40px;
+                }
+                p {
+                    margin-left: 50px;
+                }
+                li {
+                    margin-left: 60px;
+                }
+                div{
+                    margin-left: 88px;
+                }
+                
+                img {
+                max-width: 100%;
+                height: auto;
+                }
+                
+                #toc_container {
+                background: #ecf8f8 none repeat scroll 0 0;
+                border: 1px solid #aaa;
+                display: table;
+                font-size: 95%;
+                margin-bottom: 1em;
+                padding: 30px;
+                width: auto;
+                height: auto;
+               
+                    
+                }
+
+                .toc_title {
+                font-weight: 700;
+                font-size: 20px;
+                text-align: center;
+                }
+
+                #toc_container li, #toc_container ul, #toc_container ul li{
+                list-style: outside none none !important;
+                }
+
+
+			</style>
+            
+			<!--	<meta name="viewport" content="initial-scale=2.0, minimum-scale=1.0, maximum-scale=0.5, user-scalable=no"> -->
+            
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+		</head>
+	
+
+	<body style="margin-left: 0px;font-size:16px">
+
+<!--
+	<table width="100%" height= 500px style="opacity:1;margin-left: 4px;" >
+	<tr>
+	<td  bgcolor="#75B6A0" style="margin-left: 0px;font-size:50px;text-align: center;">
+		<span style="font-size:30px"> Software Requirements Specification </span>  
+		<br>Deal Teal
+	</td>
+	</tr></table>
+
+-->
+        <center>
+        <img src="https://i.imgur.com/qZws6u2.png" alt="Dealteal logo">
+            
+            
+            <br>
+            <br>
+                
+		
+            <h1 style="font-size:40px; margin-left:0px" id="top">Software Requirements Specification</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2 style="margin-left:0px">Version 1.0</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2 style="margin-left:0px">Prepared by CSE327.1 - Team 2</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        <!-- Rest Of The Code -->
+        
+        
+        
+        
+<div  id="toc_container" style="margin-left:0px">
+<p style="margin-left:0px"  class="toc_title">Navigation Shortcuts</p>
+    <ul style="margin-left: -30px" class="toc_list">
+    <li style="margin-left: 0px"><a href="#intro">1. Introduction</a></li>
+    <li style="margin-left: 0px"><a href="#overall">2. Overall Description</a></li>
+    <li style="margin-left: 0px"><a href="#external">3. External Interface Requirements</a></li>
+    <li style="margin-left: 0px"><a href="#sys">4. System Features</a></li>
+    <li style="margin-left: 0px"><a href="#nonfunc">5. Other Nonfunctional Requirements</a></li>
+    </ul>
+    <br>
+</div>
+       </center> 
+        
+        
+       <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+<!-- Section 1 starts -->
+        
+        
+        <h1 id="intro"> 
+        1.	Introduction
+        </h1>
+        <h2>1.1	Purpose</h2>
+        <p>This document provides a detailed description of "AR Deals" service. It will portray the intent and show the complete breakdown of the system, along with aspects such as all the different interfaces to the various user roles as well as all the system constraints the application might endure. It will primarily provide a blueprint for the developers of the application, and will be used as a reference document for approaching a client with a proposal.         
+        </p>
+        
+<h2>1.2	Document Conventions</h2>
+        
+        <p style="font-size:18px; color:red"><b>NB: All images are hosted on an external server, please connect to the internet when viewing this document. </b></p>
+        
+        <li>Font used: Times New Roman</li>
+        
+        <p>Bold-faced text signifies section headings; Italics are used to highlight labels or occasionally specific points of interest. Figures/diagrams are numbered according to section headings.</p> 
+
+        <p>Abbreviations:</p>
+        <li>AR - Augmented Reality</li>
+        <li>SRS - Software Requirements Specifications</li>
+        <li>GPS - Global Positioning System</li>
+
+        
+        
+<h2>1.3	Intended Audience and Reading Suggestions</h2>
+        
+        
+        <p>This document is prepared to be followed as a reference for the developers of the software, the testing staff, the marketing team, copywriters and the project leaders. Clients may review the document to learn in details about the software. This document follows the standard IEEE SRS format, which is organized in an increasingly in-depth fashion. </p>
+        <p>Developers and project leaders have to go through all sections with a keen eye for details. </p>
+        <p>Testing staff will have to carefully go through all the features and actions of the service to troubleshoot the system properly.</p>
+        
+        <p>Marketers will have to focus on the features to be able to advertise the product properly.</p>
+        
+        <p>Copywriters will have to find scope for improvement in the document wherever possible.
+        </p>
+        
+ <h2>1.4 Product Scope</h2> 
+        <p>The "AR Deals" service and specifically its mobile application provides a new, more convenient way of finding the best deals around the user's current position. It eliminates the need of typing any text on-screen whenever the user wants to look for deals, allowing the user to simply point the phone's camera towards their surroundings and view deals available in real-time with the help of placeholders or "deal bubbles" on the points of interest. The application also learns the user's preferences and shows deals according to the user's previous taste to cater a more personalized experience.
+
+            Refer to the Monetization Strategies and Technology Innovation sub-sections below for further information.
+        </p>
+        
+ <h2>1.5 References</h2>  
+        
+        <p>A document consisting of further information on the scope of the project, taking a deeper look at the prospective business strategies and visions involved is attached at the end with this document. Use case diagrams and expanded use case diagrams are attached in their respective sections. </p>
+        
+        
+        
+<!-- Section 1 ends, section 2 starts -->      
+        
+        
+        <h1 id="overall"> 2. Overall Description</h1>
+        
+<h2>2.1	Product Perspective</h2>
+        
+        <h3>2.1.1 Overview:</h3>
+        <p>The software will consist of a mobile application and an accompanying website. The mobile application will use Augmented Reality and marker-less GPS location technology to find deals in real-time on screen, and also allow users to publish or modify their own deals. When a user searches for a particular deal or looks for a certain type of deal frequently, the application will remember the preference and later will also show similar deals even when the user is not looking for those particular types of deals. The website will use the same dataset and allow users to add/edit deals, but will be limited to finding the deals via a location search instead of using AR. </p>
+        
+        <p>In order the get location data, the mobile application will use the mobile phone's built-in GPS chip to find the location co-ordinates of the user. This will allow the application to identify nearby deals and notify the user with the data on-screen. The deals will be stored in a database with a key attribute being the automatically generated GPS location co-ordinates along with other supporting information such as titles, ratings, etc. provided by the publisher. </p>
+        
+        <p>To seamlessly connect the data, both the platforms will share the same database hosted locally on the devices, and communicate and exchange data whenever needed. </p>
+        
+        <h3>2.1.2 Monetization Strategy</h3>
+        
+        <p>There are three direct methods for a prospective monetization scheme, through both the application and  the website:</p>
+            
+            <li>Allowing general users to publish their own deals for a monthly subscription fee: A monthly subscription fee will ensure users to post multiple deals to make the most of their investment and in turn, allowing for more traffic through the application. More traffic therefore means a more lucrative platform for bigger business owners to advertise their deals.
+            </li>
+            <li>Putting deals towards the top of the deal allocation pages of both the application and website: Deals can be highlighted and prioritized to be shown towards the top of a location filtered page to ensure more visibility from users. This can be initially achieved or acquired by verified business owners who can highlight their deals in exchange for a monetary value, through transactions outside of the online service. 
+            </li>
+            <li>Collaborations with mobile financial services or telecom operators: Such collaborations will make the registration and payment process smoother for the users, and in turn allowing the deals service for a more rapid initial exposure.
+            </li>
+            
+            <p>Other indirect methods may include allowing for advertisements to be displayed towards the bottom of the UI.</p>
+        
+        <h3>2.1.3 Technology Innovation and Vision</h3>
+        
+            <p>Augmented Reality is a technology that is still unheard of to many. The AR technology, although may sound gimicky to some, will provide a groundbreaking experience with its ease of use in the near future. Removing the need for the user requiring to input data will "self-disrupt" a lot of tech giants in a positive way. Information can be now provided to potential users or customers without them even looking for it. For example, deals of items that the user might not have been ever interested in can pop up when available, which may intrigue the user to try it out, which would have not been possible in the past. 
+            </p>
+            <p>Users now seek for a personal, more catered experience in almost every service or product available. With the variety available in the market, a user will feel the most comfortable when he/she is even remotely familiar with the service they will be recieving. Bots are catering to that need, and a machine learning feature that learns the user's preferences tries to provide the user with an experience similar to that very bot. The user will know that the application will only suggest things that the user is interested in, and thus provide a sense of familiarity.
+            </p>
+        
+        
+        
+  <h2>2.2 Product Functions</h2> 
+        <p>Mobile application:</p>
+        <ul>
+            <li>Select categories of interest(types of deals the user wants to see)</li>
+            <li>View deals in real-time using AR</li>
+            <li>Select custom location to view list of deals</li>
+            <li>View all deals in a list format</li>
+            <li>Search for specific deals</li>
+            <li>Expand deals to view more information</li>
+            <li>Create and publish a deal</li>
+            <li>Edit a deal published by the user</li>
+            <li>Delete a deal published by the user</li></ul>
+            
+            <p>Mobile application:</p>
+        <ul>
+            <li>Select custom location to view list of deals</li>
+            <li>View all deals in a list format</li>
+            <li>Search for specific deals</li>
+            <li>Expand deals to view more information</li>
+            <li>Create and publish a deal</li>
+            <li>Edit a deal published by the user</li>
+            <li>Delete a deal published by the user</li>
+        
+        </ul>
+        
+   <h2>2.3 User Classes and Characteristics</h2> 
+            <p>Users can either use the mobile application or the website to locate deals. When using the mobile application, the users have the option to use the AR feature to instantly look up deals at a location without the need to search or type any sort of keywords.</p>
+
+            <p>There may be two types of users for this service:</p>
+
+            <p><b>User seeking deals:</b></p>
+            <p>Such users will use the service when they are actively seeking for a deal on some product they are interested to consume. These users are expected to generally use the AR feature on the mobile application to seek deals when at a location, and as the application will have the real-time AR screen as its Home page, the users are not expected to be tech savvy to be able to use the application to its full potential. This type of user will have limited privileges in the application as they will not be able to publish their own deals until they make the monetary transaction required to do so.</p>
+
+            <p><b>User publishing deals:</b></p>
+            <p>This type of user will use the service to promote a product or deal they are trying to market. These users will mostly use the application for business purposes and are likely to be interested in trying out newer technological methods to promote their products or services. As this type of user has already completed the monetary transaction (monthly subscription fee) required to be able to publish/edit/delete their own deals, they will have full privileges to update or change information stored in the database.</p>
+
+            <p>Administrators will be able to create or delete user accounts whenever necessary. </p>
+        
+    <h2>2.4	Operating Environment</h2>
+            <p>The mobile application will be running on the Android Runtime Environment on an Android based device, commonly on a smartphone. It can be run on Android version 4.1 and above. </p>
+        
+    <h2>2.5	Design and Implementation Constraints</h2>
+        
+            <p>As the mobile application's primary feature, the Augmented Reality experience, is entirely dependent on the phone's GPS location accuracy, the accuracy will most likely not be the same for every user. The application will also be dependent on the phone's camera qualities to work smoothly in real time, as a lagging camera will not provide the best experience on the application.</p>
+            <p>Also, an internet connection is mandatory for the application as it will convey data from the database to the application almost continuously while the application is open. For this very reason, the fetching of data may see slight delays as the database will also be shared among the application as well as the website. </p>
+        
+    <h2>2.6	Assumptions and Dependencies</h2>
+        
+        <p>The following are the assumptions and dependencies that the service takes into account:</p>
+            <ul>
+            <li>The GPS location co-ordinates provided by the mobile phone are accurate. It is also assumed to be using the same GPS technology and data pattern on all mobile devices.</li>
+            <li>There may be "ghost deals", meaning locations or deals that may have existed in the past and do not exist anymore, and have not been updated in the subscription renewal period.</li>
+            <li>The AR feature relies on a third-party engine, namely Unity3D, thus becoming a dependency as bugs from their end may hamper user experience.</li>
+            <li>It is also assumed that the mobile device running the application has a capable camera and processing hardware to run the application. If the phone does not have hardware capable enough, the application may not work as it was designed to, or may not work at all. </li>
+
+            </ul>
+        
+        
+<!-- End of Section 2 -->
+        
+<h1 id="external">3.	External Interface Requirements</h1>
+        
+    <h2>3.1	User Interfaces</h2>
+        <h3>3.1.1 Mobile application:</h3>
+        
+    
+        
+        <figure>
+        <img src="https://i.imgur.com/Jznx7W5.jpg" alt="Wireframe diagram for Signup and Categories pages.">
+        </figure>
+        
+        
+        
+        <p>When a user opens the app for the first time (or after the user logs out of their user account), the user will see a login/signup page, see <b style="color:red">Figure 3.1.</b> The user will be able to register or log-in by clicking on the designated button. </p>
+        
+        <p>When the user has completed signup, a category selection screen will be displayed, see <b style="color:red">Figure 3.2</b>. The user will be able to select what categories of deals he/she prefers to be offered. But this category window can also be returned back to later whenever required.</p>
+        <br>
+        <br>
+        <figure>
+        <img src="https://i.imgur.com/BxxhxDM.jpg" alt="Wireframe diagram for loading, AR feature and sidebar.">
+        </figure>
+        
+        <p>After category selection is completed, the user will be shown a brief loading screen, see <b style="color:red">Figure 3.3</b>, and will be taken to the AR window with deals displayed in real-time, see <b style="color:red">Figure 3.4.</b></p>
+        
+        <p>When clicked in the menu button on the top-left corner of the UI, a side bar will pop out listing the following options: <i>Home</i> - to go back to the previous AR window; <i>Categories</i> - to select preferred categories of deals; <i>Your Deals</i> - a list of all deals published by that user; <i>All Deals</i> - a list of all deals available at that time, see <b style="color:red">Figure 3.5.</b></p>
+        <br>
+        <br>
+        <figure>
+        <img src="https://i.imgur.com/VQ6UVah.jpg" alt="Wireframe diagram for first deal, All Deals pages.">
+        </figure>
+        
+        <p>When the user clicks on the <i>Your Deals</i> tab for the first time, the application will notify the user that he/she has not added any deals yet and needs to make a monetary transaction to be able to publish a deal, see <b style="color:red">Figure 3.6.</b> After the payment is done through an external gateway, the page to add a new deal will appear. It will prompt the user that the deal has been added when the user clicks to save.</p>
+        
+        <p>Also from the sidebar, when the user selects the <i>All Deals</i> option, a page listing all deals available, which can be filtered by location, is shown, see <b style="color:red">Figure 3.7.</b></p>
+        <br>
+        <br>
+        <figure>
+        <img src="https://i.imgur.com/JEC3ZVs.jpg" alt="Wireframe diagram for deal publishing pages.">
+        </figure>
+        
+        <p>For the next time the user opens the <i>Your Deals</i> tab, all their deals will be listed with the edit and delete icon next to the respective deals, see <b style="color:red">Figure 3.8, 3.9, 3.10.</b></p>
+        <br>
+        
+    <h2>3.2 Hardware Interfaces</h2> 
+        <p>There are no hardware interfaces for the application or the website, as components necessary to run the software come all built-in in the mobile phone or the server running the website.</p>
+        
+    <h2>3.3	Software Interfaces</h2>
+        <p>The mobile application uses an open-source graphics engine called "Unity 3D" that enables placeholders to be put on locations in real-time. The phone communicates with the GPS component and fetches location information to determine the user's location, and then with the database in order to get the stored information regarding the deals, which is then shown in the form of placeholders on screen. The application allows the user to read as well as edit the database to add/edit/delete their published deal. </p>
+        <p>The website does not have the AR feature, and communicates with the database to display the stored information on the portal. The deals on the website can be filtered by locations, which will also be stored in the database. The website also allows the user to add/edit/delete deals, in turn allowing the user to modify the database.</p>
+
+    <h2>3.4	Communications Interfaces</h2>   
+        <p>For a user account to be created, the user requires a Google or Facebook account to register. Data such as user names and date of birth are fetched from the social media accounts and authenticates the user. Only one account can be created with one Facebook/Google account to avoid duplicates. Forms will be maintained manually, with a payment system implemented that will be using gateway services like SSLCommerz to confirm monthly subscriptions of deal publishers.</p>
+        
+        
+        
+        
+        
+<!-- End of section 3 -->
+
+
+<!-- Rest Of The Code -->
+
+
+
+
+
+		<h1 id="sys">Section 4: System Features</h1>
+
+		
+
+				
+		<h2><i>Use Case Diagrams</i> </h2>
+        
+        <figure>
+       <img src="https://i.imgur.com/rj6LKUn.jpg" alt="Use Case Diagram for Administrator" >     
+        <figcaption> <b>Fig 1 - Use case diagram for the Administrator.</b></figcaption>
+               
+        </figure>
+        
+        <figure>
+		<img src="https://i.imgur.com/SYDdkZc.jpg" alt="Use Case Diagram for Users" >
+		
+        <figcaption> <b>Fig 2 - Use case diagram for the Users.</b></figcaption>
+		</figure>
+		
+        <table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.194-->
+				
+
+		<h3><u>4.1 Use Case: Add Any User Account </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.1.1</span>  
+			     	Name: Add Any User Account
+					<div>
+						  Type: Primary<br>
+						  Actors Involved: Administrator
+					</div>
+        </p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.1.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions	</th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td>1. Go to website or app</td>
+				    <td>2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page  </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td>5. Enter Username and Password	 </td>
+				    <td>6. Validate against admin username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "Add Account" Option	</td>
+				    <td> 8.	Serve Add Account form</td> 				    
+				  </tr>
+
+				   <tr>
+				    <td>9. Fill Out Form	 </td>
+				    <td>11. Add User to Database </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 10. Select "Confirm"	      </td>
+				    <td> 12. Send Confirmation Message </td> 				    
+				  </tr>
+
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.1.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+
+		<ul style="list-style-type:none"> 
+			  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+			  <li> 7.1: Username and/or Password does not have authority to perform task. Send "Not Authorized" message. </li>
+			  <li> 9.1: Essential information not provided in form. Ask to provide all necessary information. </li>
+		</ul>
+
+	<!-- 4.1 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.2 -->
+		<br>
+		<h3><u>4.2 Use Case: Delete any User Account </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.2.1</span>  
+			     	Name: Delete any User Account 
+					<div>
+						  Type: Primary<br>
+						  Actors Involved: Administrator
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.2.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions	</th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td>1. Go to website or app</td>
+				    <td>2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td>4. Serve Login Page  </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td>5. Enter Username and Password	 </td>
+				    <td>6. Validate against admin username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "Delete Account" Option </td>
+				    <td> 8.	Serve List of User Accounts </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td>9. Choose Desired Account to remove	</td>
+				    <td>11. Ask for confirmation </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 10. Select "Delete" </td>
+				    <td> 13. Delete User Account </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td>12. Select "Yes" </td>
+				    <td>14. Send Confirmation Message </td> 				    
+				  </tr>
+
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.2.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+			<ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				  <li> 7.1: Username or/and Password does not have authority to perform task. Send "Not Authorized" message. </li>
+				  <li> 12.1: User chooses "No". Do not delete account. </li>
+			</ul>		
+
+	<!-- 4.2 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+
+	<!-- 4.3 -->
+		<br>
+		<h3><u>4.3 Use Case: Create User Account </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.3.1</span>  
+			     	Name: Create Account
+					<div>
+						  Type: Primary<br>
+						  Actors Involved: Paying User, User 
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.3.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions	</th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose "Sign-up" Option	</td>
+				    <td> 4. Serve Sign-up Form  </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td>5.	Fill out form		 </td>
+				    <td>7.  Add User to Database </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 6.	Select "Create Account"	 </td>
+				    <td> 8.  Send Confirmation message </td> 				    
+				  </tr>				   
+
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.3.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+		    <ul style="list-style-type:none"> 
+				  <li> 5.1: Essential information not provided in form. Ask to provide all necessary information. </li>
+				  <li> 7.1: User already exists in database. Send out a "check details again" message. </li>				  
+			</ul>
+
+	<!-- 4.3 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.4 -->
+		<br>
+		<h3><u>4.4 Use Case: Edit User Account </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.4.1</span>  
+			     	Name: Edit Account
+					<div>
+						  Type: Primary<br>
+						  Actors Involved: Paying User, User 
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.4.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "Edit Account" Option </td>
+				    <td> 8.	Serve User Account Information page  </td> 				    
+				  </tr>			
+
+
+				  <tr>
+				    <td> 9. Choose Desired field to edit </td>
+				    <td> 11. Ask for confirmation </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 10.  Make changes</td>
+				    <td> 13. Edit User Information </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 12. Select "Yes" </td>
+				    <td> 14. Send Confirmation Message </td> 				    
+				  </tr>		   
+
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.4.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+	
+		<ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				  <li> 13.1: Essential information not provided in field. Ask to provide all necessary information. </li>
+				  <li> 12.1: User chooses "No". Do not retain changes. </li>
+		</ul>
+
+	<!-- 4.4 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.5 -->
+		<br>
+		<h3><u>4.5 Use Case: Delete User Account </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.5.1</span>  
+			     	Name: Delete Account
+					<div>
+						  Type: Primary<br>
+						  Actors Involved: Paying User, User 
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.5.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "Edit Account" Option </td>
+				    <td> 8.	Serve User Account Information page </td> 				    
+				  </tr>			
+
+
+				  <tr>
+				    <td> 9. Select "Delete Account" </td>
+				    <td> 10. Ask for confirmation </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 11. Select "Yes"</td>
+				    <td> 12. Delete User Account </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> </td>
+				    <td> 13. Send Confirmation Message </td> 				    
+				  </tr>		   
+
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.5.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+			<ul style="list-style-type:none"> 
+				  <li>6.1: Username or Password Invalid. Send "Try Again" message.  </li>
+				  <li>11.1: User Chooses "No". Do not delete account. </li>
+				  
+			</ul>
+
+	<!-- 4.5 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.6 -->	
+		<br>
+		<h3><u>4.6 Use Case: Pay for Deals </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.6.1</span>  
+			     	Name: Make Payment
+					<div>
+						  Type: Secondary<br>
+						  Actors Involved: Paying User
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.6.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "Add Deals" Option	 </td>
+				    <td> 8.	Verify User has all dues cleared. If not, serve "Register with us" Page  </td> 				    
+				  </tr>			
+
+
+				  <tr>
+				    <td> 9.	Select "Register" Option	 </td>
+				    <td> 10.Serve the payment information form	</td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 11. User fills out the form with necessary details	</td>
+				    <td> 13. Asks for confirmation </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 12. Clicks "Submit" </td>
+				    <td> 15. Adds information to Database </td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 14. Selects "Yes"	</td>
+				    <td> 16. Sends out confirmation message </td> 				    
+				  </tr>			   
+
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.6.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+		    <ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				  <li> 11.1: Necessary fields left blank. Prompt user to provide all required information. </li>
+				  <li> 11.2: Information provided in field invalid. Send out "Please Check Again" message. </li>
+				  <li> 14.1: User chooses "No". Discard the form. </li>
+			</ul>
+
+	<!-- 4.6 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.7 -->
+		<br>
+		<h3><u>4.7 Use Case: Add Deals  </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.7.1</span>  
+			     	Name: Add Deals 
+					<div>
+						  Type: Primary <br>
+						  Actors Involved: Paying User
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.7.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "Add Deals" Option </td>
+				    <td> 8.	Verify User has all dues cleared </td> 				    
+				  </tr>			
+
+
+				  <tr>
+				    <td> 10.	Fill Out Form </td>
+				    <td> 9. Serve form to add deals </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 11. Select "Publish"</td>
+				    <td> 12. Update Database </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> </td>
+				    <td> 13. Send out confirmation message </td> 				    
+				  </tr>
+   
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.7.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+	
+		    <ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message.  </li>
+				  <li> 8.1: Username or/and Password does not have authority clearance to perform task. Prompt user to "Register" via payment. </li>
+				  <li> 11.1: Essential information not provided in form. Ask to provide all necessary information. </li>
+			</ul>
+
+	<!-- 4.7 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+
+	<!-- 4.8 -->
+		<br>
+		 <h3><u>4.8 Use Case: Edit Deals </u></h3>
+			
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.8.1</span>  
+				    Name: Edit Deals 
+					<div>
+						Type: Primary <br>
+						Actors Involved: Paying User
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px">4.8.2</span>
+				<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+		    <br>
+
+			<table style="width:90%;padding-left: 95px;" >
+					 <tr>
+						<th>Actor Actions </th>
+						<th>System Response</th> 				    
+					 </tr>
+
+					  <tr>
+					    <td> 1. Go to website or app</td>
+					    <td> 2. Serve Homepage</td> 				    
+					  </tr>
+
+					  <tr>
+					    <td> 3.	Choose Login Option	</td>
+					    <td> 4. Serve Login Page </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 5. Enter Username and  Password </td>
+					    <td> 6. Validate against username and password and approve login </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 7.	Select "Your Deals" Option	 </td>
+					    <td> 8.	Verify User has all dues cleared </td> 				    
+					  </tr>			
+
+
+					  <tr>
+					    <td> 10.Select "Edit Deals" Option </td>
+					    <td> 9. Show all deals published by user </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 11. Choose Desired deal to edit </td>
+					    <td> 13. Ask for confirmation </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 12.  Make changes </td>
+					    <td> 15. Edit deal Information </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 14. Select "Yes" </td>
+					    <td> 16. Send Confirmation Message</td> 				    
+					  </tr>
+	   
+			</table>
+			<br>
+				
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.8.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+			
+			<ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				  <li> 8.1: Username or/and Password does not have authority clearance to perform task. Prompt user to "Register" and clear payment. </li>
+				  <li> 9.1: User has no deals published. Prompt the user to "Add Deals" page. </li>
+				  <li> 12.1: Essential information not provided in field. Ask to provide all necessary information. </li>
+				  <li> 14.1: User chooses "No". Do not retain changes. </li>
+			</ul>
+
+	<!-- 4.8 END -->
+
+		<br>
+		<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.9 -->
+		<br>
+		 		<h3><u>4.9 Use Case: Delete Deals </u></h3>
+			
+				<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px"> 4.9.1</span>  
+				     	Name: Delete Deals
+						<div>
+							  Type: Primary <br>
+							  Actors Involved: Paying User
+						</div>
+				</p>
+
+				<p style="margin:0;margin-left:60px;">
+						<span style="font-size:12px">4.9.2</span>
+						<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+				</p>
+		    	<br>
+
+
+				<table style="width:90%;padding-left: 95px;" >
+					  <tr>
+					    <th>Actor Actions </th>
+					    <th>System Response</th> 				    
+					  </tr>
+
+					  <tr>
+					    <td> 1. Go to website or app</td>
+					    <td> 2. Serve Homepage</td> 				    
+					  </tr>
+
+					  <tr>
+					    <td> 3.	Choose Login Option	</td>
+					    <td> 4. Serve Login Page </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 5. Enter Username and  Password </td>
+					    <td> 6. Validate against username and password and approve login </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 7.	Select “Your Deals” Option	 </td>
+					    <td> 8.	Verify User has all dues cleared </td> 				    
+					  </tr>			
+
+
+					  <tr>
+					    <td> 10.Select "Edit Deals" Option </td>
+					    <td> 9. Show all deals published by user </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 11. Choose Desired deal to delete </td>
+					    <td> 13. Ask for confirmation </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 12.  Select "Delete" </td>
+					    <td> 15. Delete Deal </td> 				    
+					  </tr>
+
+					   <tr>
+					    <td> 14. Select "Yes" </td>
+					    <td> 16. Send Confirmation Message</td> 				    
+					  </tr>
+	   
+				</table>
+				<br>
+
+				<p style="margin:0;margin-left:60px;">
+						<span style="font-size:12px">4.9.3</span>
+						<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+				</p>
+
+			
+			<ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message.  </li>
+				  <li> 8.1: Username or/and Password does not have authority clearance to perform task. Prompt user to clear payment. </li>
+				  <li> 9.1: User has no deals published. Prompt the user to "Add Deals" page. </li>
+				  <li> 14.1: User chooses "No". Do not retain changes. </li>
+			</ul>
+
+	<!-- 4.9 END -->
+
+		<br>
+		<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.10 -->
+	 <br>
+	 		<h3><u>4.10 Use Case: Select Location </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.10.1</span>  
+			     	Name: Select Location
+					<div>
+						  Type: Secondary <br>
+						  Actors Involved: Paying User, Users
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.10.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "View Deals" Option </td>
+				    <td> 8.	Serve All deals page </td> 				    
+				  </tr>			
+
+
+				  <tr>
+				    <td> 9.	 Select desired location from drop down menu </td>
+				    <td> 10. Show deals in proximity to selected location </td> 				    
+				  </tr>
+				     
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.10.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+		<ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				  <li> 10.1: No deals near current user location. Show "No deals to show" message. </li>				 
+			</ul>
+
+    <!-- 4.10 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+    <!-- 4.11 -->
+	  <br>
+	 		<h3><u>4.11 Use Case: Select Category  </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.11.1</span>  
+			     	Name: Select Category
+					<div>
+						  Type: Secondary <br>
+						  Actors Involved: Paying User, Users
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.11.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "View Deals" Option </td>
+				    <td> 8.	Serve All deals page </td> 				    
+				  </tr>			
+
+
+				  <tr>
+				    <td> 9.	Select desired category from drop down menu </td>
+				    <td> 10. Show deals in relation to selected category </td> 				    
+				  </tr>
+				     
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.11.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+		<ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				  <li> 10.1: No deals in correspondence to selected category. Show "No deals to show" message. </li>				  
+			</ul>
+
+    <!-- 4.11 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.12 -->
+	        <br>
+	 		<h3><u>4.12 Use Case: Search for deals   </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.12.1</span>  
+			     	Name: Search for deals
+					<div>
+						  Type: Primary <br>
+						  Actors Involved: Paying User, Users
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.12.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "View Deals" Option </td>
+				    <td> 8.	Serve All deals page </td> 				    
+				  </tr>			
+
+
+				  <tr>
+				    <td>  9. Select search bar	   </td>
+				    <td> 11. Show all deals relevant to entered keywords </td> 				    
+				  </tr>
+
+				    <tr>
+				    <td> 10. Enter Desired   Keywords </td>
+				    <td> </td> 				    
+				  </tr>
+				     
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.12.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+
+		    <ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				  <li> 11.1: No deals in relevance to entered keywords. Show "No deals to show" message. </li>				  
+			</ul>
+
+    <!-- 4.12 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+    <!-- 4.13 -->
+	        <br>
+	 		<h3><u>4.13 Use Case: View all deals </u></h3>
+		
+			<p style="margin:0;margin-left:60px">
+				<span style="font-size:12px"> 4.13.1</span>  
+			     	Name: View all deals
+					<div>
+						  Type: Primary <br>
+						  Actors Involved: Paying User, Users
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.13.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "View Deals" Option </td>
+				    <td> 8.	Serve All deals page </td> 				    
+				  </tr>			
+				     
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.13.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+		    <ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				 
+			</ul>
+
+    <!-- 4.13 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+	<!-- 4.14 -->
+	   <br>
+	 		<h3><u>4.14 Use Case: Expand deal </u></h3>
+		
+			<p style="margin:0;margin-left:60px;">
+				<span style="font-size:12px"> 4.14.1</span>  
+			     	Name: Expand deal 
+					<div>
+						  Type: Secondary   <br>
+						  Actors Involved: Paying User, Users
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.14.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1. Go to website or app</td>
+				    <td> 2. Serve Homepage</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Choose Login Option	</td>
+				    <td> 4. Serve Login Page </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 5. Enter Username and  Password </td>
+				    <td> 6. Validate against username and password and approve login </td> 				    
+				  </tr>
+
+				   <tr>
+				    <td> 7.	Select "View Deals" Option </td>
+				    <td> 8.	Serve All deals page </td> 				    
+				  </tr>			
+
+				   <tr>
+				    <td>  9. Click to Expand Desired Deal	</td>
+				    <td> 10. Serve Information page for the desired deal  </td> 				    
+				  </tr>		
+				     
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.14.3</span>
+					<span style="font-size:19px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+		<ul style="list-style-type:none"> 
+				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
+				  
+			</ul>
+
+    <!-- 4.14 END -->
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+
+
+	<!-- 4.15 -->
+	   <br>
+	 		<h3><u>4.15 Use Case: View Deals in AR </u></h3>
+		
+			<p style="margin:0;margin-left:60px">
+				<span style="font-size:12px"> 4.15.1</span>  
+			     	Name: View deals in AR
+					<div style="margin-left: 68px">
+						  Type: Primary <br>
+						  Actors Involved: Paying User, Users
+					</div>
+			</p>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.15.2</span>
+					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
+			</p>
+	    	<br>
+
+
+			<table style="width:90%;padding-left: 95px;" >
+				  <tr>
+				    <th>Actor Actions </th>
+				    <th>System Response</th> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 1.	Open up App	</td>
+				    <td> 2.	Serve Homepage which triggers the camera</td> 				    
+				  </tr>
+
+				  <tr>
+				    <td> 3.	Point Camera at Location		</td>
+				    <td> 4.	Serve information of all available deals at that location in augmented reality </td> 				    
+				  </tr>
+	
+				     
+			</table>
+			<br>
+
+			<p style="margin:0;margin-left:60px;">
+					<span style="font-size:12px">4.15.3</span>
+					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
+			</p>
+
+		
+		<ul style="list-style-type:none"> 
+				  <li> 4.1: Location contains no deals at that moment. Show nothing on the screen.  </li>				  
+			</ul>
+
+    <!-- 4.15 END -->
+
+   <!-- Section 4 ends --> 
+<br>
+<br>
+
+<h1 id="nonfunc">5. Other Nonfunctional Requirements</h1>
+    <h2>5.1	Performance Requirements</h2>
+            <li>Loading time of the AR feature should be reasonable.</li>
+            <li style="margin-left:90px;list-style-type:none">Description: The application loading time with the AR screen should not take too much time.</li>
+            <li style="margin-left:90px;list-style-type:none">Dependency: Unity3D Engine</li>
+            <li>User search should be monitored and learned over time.</li>
+            <li style="margin-left:90px;list-style-type:none">Description: Users will be shown types of deals that he/she previously searched for.</li>
+            <li style="margin-left:90px;list-style-type:none">Dependency: None</li>
+            <li>No hyperlinks should be allowed.</li>
+            <li style="margin-left:90px;list-style-type:none">Description: Users should not be able to hyperlink anything on their deals.</li>
+            <li style="margin-left:90px;list-style-type:none">Dependency: None </li>
+    <h2>5.2	Safety Requirements</h2>
+        <p>As any user can publish deals, it is dependent on the organic audience to filter through any shady deals for the time being, until a Govt. regulated online authentication is approved in Bangladesh.</p>
+<br>
+<br>
+<br>
+
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+                                                                     
+                                                                     
+                                                                 
+                                                                     
+                                                                   
+     <a style="margin-left:30px; color:red" href="#top">Back to the top.</a>                                                                
+<br>
+<br>
+<br>
+<br>
+<br>
+                                               
+
+
+	<!--          END CREDITS       -->
+
+	<table width="100%" height= 250px style="opacity:1;margin-left: 4px;" >
+	<tr>
+	<td  bgcolor="#13a89e" style="font-family:arial;margin-left: 0px;font-size:20px;text-align: center;">
+			<span style="font-size:30px; color:white"> The DealTeal Team:  
+			<br>
+				<span style="font-size:20px;">
+					Fyeeza Fyruz 1510152042  <br>
+					Mohammad Sadman Islam 1510151642 <br>
+					SM Refaiyet H Eehamm 1210298042<br>
+					Junaid Tarik 1330454642<br>
+					Gazi Md. Ashhab 1320701042 
+				</span> 
+				</span> 
+	</td>
+	</tr></table>
+
+	<!--          END CREDITS       -->
+
+
+	</body>
+
+</html> 
