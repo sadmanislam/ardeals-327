@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+	
+		<head><title>SDS</title>
+
+			<style>
+				body {
+					background-color:#CDEEEC;
+					font-family:Times;
+					color:#55423E;
+				}
+
+				table {		
+                    
+				    <!-background-color: DarkGray;->
+                    
+				}
+
+				table th {
+				    color: black;
+				    background-color: #F5F5F5;
+				}
+				table tr:nth-child(even) {
+				    background-color: #eee;
+				}
+				table tr:nth-child(odd) {
+				    background-color: #fff;
+				}
+
+				th, td, tr {
+				    padding: 7px;
+				    padding-left: 15px;
+				}
+                
+                h1 {
+                margin-left: 15px;
+                }
+
+                h2 {
+                margin-left: 30px;
+                }
+                h3{
+                    margin-left: 40px;
+                }
+                p {
+                    margin-left: 50px;
+                }
+                li {
+                    margin-left: 60px;
+                }
+                div{
+                    margin-left: 88px;
+                }
+                
+                img {
+                max-width: 100%;
+                height: auto;
+                }
+                
+                #toc_container {
+                background: #ecf8f8 none repeat scroll 0 0;
+                border: 1px solid #aaa;
+                display: table;
+                font-size: 95%;
+                margin-bottom: 1em;
+                padding: 30px;
+                width: auto;
+                height: auto;
+               
+                    
+                }
+
+                .toc_title {
+                font-weight: 700;
+                font-size: 20px;
+                text-align: center;
+                }
+
+                #toc_container li, #toc_container ul, #toc_container ul li{
+                list-style: outside none none !important;
+                }
+                
+                
+
+
+			</style>
+            
+			
+            
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+		</head>
+	
+
+	<body style="margin-left: 0px;font-size:16px">
+
+
+        <center>
+        <img src="https://i.imgur.com/qZws6u2.png" alt="Dealteal logo">
+            
+            
+            <br>
+            <br>
+                
+		
+            <h1 style="font-size:40px; margin-left:0px" id="top">Software Design Specification</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2 style="margin-left:0px">Version 1.0</h1>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h2 style="margin-left:0px">Prepared by CSE327.1 - Team 2</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+
+        <!-- Rest Of The Code -->
+        
+        
+        
+        
+<div  id="toc_container" style="margin-left:0px">
+<p style="margin-left:0px"  class="toc_title">Navigation Shortcuts</p>
+    <ul style="margin-left: -30px" class="toc_list">
+    <li style="margin-left: 0px"><a href="#intro">1. Introduction</a></li>
+    <li style="margin-left: 0px"><a href="#design">2. Design Approach</a></li>
+    <li style="margin-left: 0px"><a href="#archi">3. Architectural Design</a></li>
+    <li style="margin-left: 0px"><a href="#db">4. Database Design</a></li>
+    <li style="margin-left: 0px"><a href="#compo">5. Component Design</a></li>
+    <li style="margin-left: 0px"><a href="#interac">6. Interaction Design</a></li>
+    <li style="margin-left: 0px"><a href="#risk">7. Risk Assessment</a></li>
+    <li style="margin-left: 0px"><a href="#implem">8. Implementation Plan</a></li>
+    </ul>
+    <br>
+</div>
+       </center> 
+        
+        
+       <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+<!-- Section 1 starts -->
+        
+        
+        <h1 id="intro"> 
+        1.	Introduction
+        </h1>
+        <h2>1.1	Purpose</h2>
+        <p>This document will outline in detail the software architecture and design for the DealTeal software. The Software Design Specification helps to convey the particular design and architectural choices that were made for the DealTeal software. It will also showcase different perspectives of the design structure to further understand the system better.         
+        </p>
+        
+<h2>1.2	Document Conventions</h2>
+        
+        <p style="font-size:18px; color:red"><b>NB: All images are hosted on an external server, please connect to the internet when viewing this document. </b></p>
+        
+        <li>Font used: Times New Roman</li>
+        
+        <p>Bold-faced text signifies section headings; Italics are used to highlight labels or occasionally specific points of interest. Figures/diagrams are numbered according to section headings.</p> 
+
+        <p>Abbreviations:</p>
+        <li>AR - Augmented Reality</li>
+        <li>SDS - Software Design Specifications</li>
+        <li>GPS - Global Positioning System</li>
+
+        
+                
+ <h2>1.3 Product Scope</h2> 
+        <p>This Design Specification provides the architectural and design-related overview of V1.0 of DealTeal. It will portray a blueprint to programmers and clients in detail describing the systems and sub-systems, database design and user interfaces through the use of architectural patterns, design conventions, sequence diagrams, UML class diagrams and database models. 
+        </p>
+        
+        
+        
+<!-- Section 1 ends, section 2 starts -->     
+        
+        <h1 id="design"> 2. Design Approach</h1>
+        
+        <p>The software will be developed in the MVC architecture format, i.e., it will consist of 3 tiers - the Presentation or UI tier, the Application or Business tier and the Data or Storage tier. There will be two different interfaces for users - a mobile application and a web counterpart with limited functionality. </p>
+        
+        
+        
+        <h1 id="archi"> 3. Architectural Design</h1>
+        
+<h2>2.1	Approach</h2>
+        
+        <p>The type of data we will be dealing with and how it might need to be used in the future should not be constrained or fixed to one format. If limited, then flexibility and scalability of the service of the application will be drastically hampered. To avoid this issue, we opted for the MVC architectural convention as it allows easier modification and maintenance whenever needed. The application server-side code and interface code is kept separate, thus allowing the data to be independently manipulated wherever needed. As methods do not need to be repeated, any change in a particular data will be represented throughout the entire system.  </p>
+        
+        
+<h2>2.2 Architecture Design Pattern</h2>
+        
+        <figure><img src="https://i.imgur.com/XQnCE68.jpg">
+        <figcaption> <b>Fig: Model-View-Controller Architecture Design Pattern.</b></figcaption></figure>
+        
+<h2>2.2 Architecture Design Style</h2>
+        
+        <figure><img src="https://i.imgur.com/EHZJeh7.jpg">
+        <figcaption> <b>Fig: MVC-Three tier Hybrind Design Style.</b></figcaption></figure>        
+        
+<h2>2.4 Description</h2>
+        
+        
+        <p>The above architecture diagram represents a hybrid between MVC pattern and the 3-tier style. The system is divided into 3 tiers, with each service connected independently to the server(s). The View and Controller are considered the presentation tier and the Model lives in the Application tier. This allows for more convenient scalability if and when the incoming or outgoing load on the servers and database may increase. There can be multiple servers in the system trying to access the shared database, and changes to the database can be quite frequent. Opting for this hybrid implementation allows for ease of access to the Application tier to services such as REST from other sources.</p>
+            <h3>Presentation tier:</h3>
+            <li>It is the user interface tier that the user can access directly. It allows the user to interact with the software. A key component of our mobile application interface will consist of a 3rd-party engine, namely "Unity3D", and allow the user to experience the Augmented Reality highlight of our software. 
+            </li>
+            <h3>Application tier:</h3>
+            <li>This tier controls the application's functionality throughout. It consists of the servers and logic required to handle data transaction in the system, acting as the bridge between the user's interaction and the data storage.  
+            </li>
+            <h3>Data tier:</h3>
+            <li>The data tier includes the data handling mechanisms, i.e., database servers, backups, etc., as well as the mechanisms to expose the stored data to the tiers above. It does this seamlessly using an Application Programming Interface or API which allows for updates or changes to the data without the Application tier being affected by the changes. Our system uses the built-in database management system in Python, SQLite, instead of a 3rd-party DBMS as the data that will be stored is not very heavy, thus not requiring a server-based solution. 
+            </li>
+            
+        
+<h1 id="db">4. Database Design</h1>   
+        
+        <h2>4.1 Approach</h2>
+        <p>The Database required for the DealTeal system is a simple relational database that consists of not many tables or complex relations. We will be using the built-in Python database module called SQLite, as the relationships and queries required to modify and access data in the system is not very complicated.
+        </p>
+                
+        <h2>4.2 ER Diagram</h2>
+        
+        <figure><img src="https://i.imgur.com/ZNh7ROv.png"></figure>
+        
+        <h2>4.3 Description</h2>
+        <p>The database primarily stores data of different types of deals published by different users. There can be three types of users; Administrators - users who are responsible for creating and deleting user accounts, Publishers - users who can publish their own deals, and Consumers - users who opt to browse for deals only. 
+        </p>
+        <p>A Consumer becomes a publisher when he/she completes the Payment transaction needed to fulfill the requirement. A Publisher can then post a Deal, which will require the Publisher to fill in a form to complete the process. The form includes most of the attributes in the "Deals" table, as well as a detailed Location segment which will also include the Longtitude and Latitude of the deal's location for accuracy. 
+        </p>
+        <p>So at a glance, a Deal falls into a certain category, and is located at a particular location, and is published by a paid user. 
+        </p>
+        
+
+<h1 id="compo">5. Component Design</h1>
+        
+        <h2>5.1 Cross Platform:</h2>
+            <h3>5.1.1 Class Description</h3>
+        <p>
+        The DealTeal system does not require subsystems to be implemented for the different platforms, as the server-side data that is needed for the web counterpart of the primary application requires a certain portion of the overall component configuration to work.</p>
+        
+        <p> Classes communicate with other classes via controllers. For example, for a User(Publisher) to add a new deal, the AddDeal controller is called to complete the interaction on behalf on the classes. As we are using the MVC architectural pattern, the controller class is basically a class with a few public methods. These methods have a direct 1-to-1 connection with a possible user action, and thus are responsible for processing the necessary data, performing the application code or logic and then showing the corresponding view. 
+            
+        </p>
+        
+        <p>The Controller classes follow an inheritence hierarchy, where methods from subclasses or child classes can use methods from the superclasses or parent classes. Key distinct actions therefore have their own controllers.</p>
+        
+        <h3>5.1.2 Class Diagram</h3>
+        
+        <figure><img src="https://i.imgur.com/53qzdew.png"></figure>
+        
+                
+<h1 id="interac">6. Interaction Design</h1>  
+        
+    <h2>6.1 Admin Use Case Sequence Diagram</h2>
+        <h3>6.1.1 Create User</h3>
+        <figure><img src="https://i.imgur.com/hr4YDeD.png" alt="Sequence Diagram: Create User (Admin).">
+            <figcaption> <b>Sequence Diagram: Create User (Admin).</b></figcaption></figure>
+        <br>
+        <h3>6.1.2 Delete User</h3>
+        <figure><img src="https://i.imgur.com/GtMM6wH.png" alt="Sequence Diagram: Delete User (Admin).">
+            <figcaption> <b>Sequence Diagram: Delete User (Admin).</b></figcaption></figure>
+        <br>
+        
+    <h2>6.2 User Use Case Sequence Diagram</h2>
+        
+        <h3>6.2.1 Create User Account</h3>
+        <figure><img src="https://i.imgur.com/Rh18rPU.png" alt="Sequence Diagram: Create User Account.">
+        <figcaption> <b>Sequence Diagram: Create User Account.</b></figcaption></figure>
+        <br>
+        <h3>6.2.2 Edit User Account</h3>
+        <figure><img src="https://i.imgur.com/u5YWLhV.png" alt="Sequence Diagram: Edit User Account.">
+        <figcaption> <b>Sequence Diagram: Edit User Account.</b></figcaption></figure>
+        <br>
+        <h3>6.2.3 Delete User Account</h3>
+        <figure><img src="https://i.imgur.com/HdTpsSc.png" alt="Sequence Diagram: Delete User Account.">
+        <figcaption> <b>Sequence Diagram: Delete User Account.</b></figcaption></figure>
+        <br>
+        <h3>6.2.4 Make Payment</h3>
+        <figure><img src="https://i.imgur.com/zPW2Jw1.png" alt="Sequence Diagram: Make Payment.">
+        <figcaption> <b>Sequence Diagram: Make Payment.</b></figcaption></figure>
+        <br>
+        <h3>6.2.5 Add Deal</h3>
+        <figure><img src="https://i.imgur.com/edFROy4.png" alt="Sequence Diagram: Add Deal.">
+        <figcaption> <b>Sequence Diagram: Add Deal.</b></figcaption></figure>
+        <br>
+        <h3>6.2.6 Edit Deal</h3>
+        <figure><img src="https://i.imgur.com/3mT5rij.png" alt="Sequence Diagram: Edit Deal.">
+        <figcaption> <b>Sequence Diagram: Edit Deal.</b></figcaption></figure>
+        <br>
+        <h3>6.2.7 Delete Deal</h3>
+        <figure><img src="https://i.imgur.com/zknZTVi.png" alt="Sequence Diagram: Delete Deal.">
+        <figcaption> <b>Sequence Diagram: Delete Deal.</b></figcaption></figure>
+        <br>
+        <h3>6.2.8 Select Location</h3>
+        <figure><img src="https://i.imgur.com/dlx4u8z.png" alt="Sequence Diagram: Select Location.">
+        <figcaption> <b>Sequence Diagram: Select Location.</b></figcaption></figure>
+        <br>
+        <h3>6.2.9 Select Category</h3>
+        <figure><img src="https://i.imgur.com/O966ftG.png" alt="Sequence Diagram: Select Category.">
+        <figcaption> <b>Sequence Diagram: Select Category.</b></figcaption></figure>
+        <br>
+        <h3>6.2.10 Search Deals</h3>
+        <figure><img src="https://i.imgur.com/cSL2K5r.png" alt="Sequence Diagram: Search Deals.">
+        <figcaption> <b>Sequence Diagram: Seach Deals.</b></figcaption></figure>
+        <br>
+        <h3>6.2.11 View All Deals</h3>
+        <figure><img src="https://i.imgur.com/lYe6y2l.png" alt="Sequence Diagram: View All Deals.">
+        <figcaption> <b>Sequence Diagram: View All Deals.</b></figcaption></figure>
+        <br>
+        <h3>6.2.12 Expand Deal</h3>
+        <figure><img src="https://i.imgur.com/06OuBOO.png" alt="Sequence Diagram: Expand Deal.">
+        <figcaption> <b>Sequence Diagram: Expand Deal.</b></figcaption></figure>
+        <br>
+        <h3>6.2.13 View Deals In AR</h3>
+        <figure><img src="https://i.imgur.com/wx4Jw41.png" alt="Sequence Diagram: View Deals In AR.">
+        <figcaption> <b>Sequence Diagram: View Deals in AR.</b></figcaption></figure>
+        <br>
+        
+        
+        
+        
+ <h1 id="risk">7. Risk Assessment</h1>  
+        
+        <table style="width:90%;padding-left: 35px;" >
+          <tr>
+              <th><b>#</b></th>
+            <th><b>Risk</b></th>
+            <th><b>Severity</b></th>
+            <th><b>Reason</b></th>
+            
+        </tr>
+          <tr>
+              <th><b>1</b></th>
+            <td>Risks associated with using 3rd-party packages/engines </td>
+            <td>Low</td>
+            <td>Recommender's System or Unity3D engine may not work as intended.</td>
+          </tr>
+          <tr>
+              <th><b>2</b></th>
+            <td>Project schedule will exceed projected time </td>
+            <td>Medium</td>
+            <td>Time management and prioritizing over other inevitable needs may be an issue; Human error.</td>
+          </tr>
+          <tr>
+              <th><b>3</b></th>
+            <td>Compatibility risks with different types of devices </td>
+            <td>Medium</td>
+            <td>GPS data format and camera API may be provide different sets of data to the system on different devices.</td>
+          </tr>
+          <tr>
+              <th><b>4</b></th>
+            <td>Overestimation of own capabilities </td>
+            <td>Medium</td>
+            <td>Team working on the project are not frequent programmers.</td>
+          </tr>
+          <tr>
+              <th><b>5</b></th>
+            <td>Adequate testing not done due to time constraints </td>
+            <td>High</td>
+            <td>Unit testing of all components may prove difficult given the short delivery time</td>
+          </tr>
+        </table>
+
+        
+<h1 id="implem">8. Implementation Plan</h1> 
+        
+         <table style="width:90%;padding-left: 35px;">
+    
+  <tr>
+    <th>Task</th>
+    <th>To be covered by:</th> 
+    <th>Estimated time of completion:</th>
+  </tr>
+  <tr>
+    <td><b>Backend framework: Django</b></td>
+    <td>Fyeeza Fyruz, Mohammad Sadman Islam</td> 
+    <td>20th March, 2018</td>
+  </tr>
+  <tr>
+    <td><b>Frontend framework: React native w/ Unity3D</b></td>
+    <td>Junaid Tarik, Gazi Md. Ashhab, SM Refaiyet H Eehamm</td> 
+    <td>26th March, 2018</td>
+  </tr>
+ <tr>
+    <td> <b>Federated Identity provider	 </b></td>
+    <td> Mohammad Sadman Islam	 </td> 
+    <td> 18th March, 2018 </td>
+  </tr>
+
+ <tr>
+    <td><b> UI Design	</b></td>
+    <td> Junaid Tarik  </td> 
+    <td> 	Design is ready. Final implementation to be ready by March 28th. </td>
+  </tr>
+
+ <tr>
+    <td> <b>Docker	 </b></td>
+    <td> Fyeeza Fyruz	 </td> 
+    <td> 12th March, 2018 </td>
+  </tr>
+
+ <tr>
+    <td><b> Platform: Android</b></td>
+    <td>  <b>Backend:</b> Fyeeza Fyruz, Mohammad Sadman Islam
+        <br>
+            <b>Frontend:</b> Junaid Tarik, Gazi Md. Ashhab, SM Refaiyet H Eehamm</td> 
+     <td> Implementation to be ready by March 28th. </td>
+  </tr>
+
+ <tr>
+    <td><b> Platform: Website	</b></td>
+    <td>  <b>Backend:</b> Fyeeza Fyruz, Mohammad Sadman Islam
+        <br>
+            <b>Frontend:</b> Junaid Tarik, Gazi Md. Ashhab, SM Refaiyet H Eehamm</td> 
+     <td> Implementation to be ready by March 28th. </td>
+  </tr>
+</table>
+
+        
+        
+<!-- End of Section 2 -->
+        
+
+<br>
+<br>
+
+
+<br>
+
+
+	<br>
+	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
+                                                                     
+                                                                     
+                                                                 
+                                                                     
+                                                                   
+     <a style="margin-left:30px; color:red" href="#top">Back to the top.</a>                                                                
+<br>
+<br>
+<br>
+<br>
+<br>
+                                               
+
+
+	<!--          END CREDITS       -->
+
+	<table width="100%" height= 250px style="opacity:1;margin-left: 4px;" >
+	<tr>
+	<td  bgcolor="#13a89e" style="font-family:arial;margin-left: 0px;font-size:20px;text-align: center;">
+			<span style="font-size:30px; color:white"> The DealTeal Team:  
+			<br>
+				<span style="font-size:20px;">
+					Fyeeza Fyruz 1510152042  <br>
+					Mohammad Sadman Islam 1510151642 <br>
+                    Junaid Tarik 1330454642<br>
+					SM Refaiyet H Eehamm 1210298042<br>
+					Gazi Md. Ashhab 1320701042 
+				</span> 
+				</span> 
+	</td>
+	</tr></table>
+
+	<!--          END CREDITS       -->
+
+
+	</body>
+
+</html> 
