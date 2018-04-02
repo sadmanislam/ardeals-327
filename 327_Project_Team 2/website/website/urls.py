@@ -16,9 +16,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.urls import path
 from django.contrib import admin
+from rest_framework.urlpatterns import format_suffix_patterns
+from deal import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^deal/', include('deal.urls')),
+    url(r'^deal/info', views.DealList.as_view()),
+    url(r'^deal/info/(?P<pk>[0-9]+)/', views.DealDetail.as_view()),
     url(r'^accounts/', include('allauth.urls')),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
