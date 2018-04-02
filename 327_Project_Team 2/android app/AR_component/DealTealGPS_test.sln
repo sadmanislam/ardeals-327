@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealTealGPS_test", "Assembly-CSharp.csproj", "{B4A4CDE9-2433-FB80-B8D4-B8865555FCAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealTealGPS_test", "Assembly-CSharp-Editor.csproj", "{F3E70467-E1B6-A079-A3A4-715FB09702BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4A4CDE9-2433-FB80-B8D4-B8865555FCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A4CDE9-2433-FB80-B8D4-B8865555FCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A4CDE9-2433-FB80-B8D4-B8865555FCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A4CDE9-2433-FB80-B8D4-B8865555FCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3E70467-E1B6-A079-A3A4-715FB09702BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E70467-E1B6-A079-A3A4-715FB09702BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E70467-E1B6-A079-A3A4-715FB09702BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E70467-E1B6-A079-A3A4-715FB09702BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
