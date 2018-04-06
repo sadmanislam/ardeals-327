@@ -63,10 +63,7 @@ def alldeals(request):
 
 
 def detail(request, deal_id):
-    try:
-        deal = Deal.objects.get(pk=deal_id)
-    except Deal.DoesNotExist:
-        raise Http404("Deal Does Not Exist. Sorry!")
+    deal = get_object_or_404(Deal, pk=deal_id)
     return render(request, 'deal/detail.html', {'deal': deal})
 
 

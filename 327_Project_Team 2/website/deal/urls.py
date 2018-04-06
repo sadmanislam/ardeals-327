@@ -1,6 +1,8 @@
 from django.conf.urls import url
 from . import views
 
+app_name = 'deal'
+
 #deal/
 urlpatterns = [
     url(r'^$', views.index, name='index'),

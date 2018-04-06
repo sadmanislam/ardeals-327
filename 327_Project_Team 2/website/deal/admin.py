@@ -5,7 +5,7 @@ from . models import Area
 from . models import Category
 
 admin.site.register(Deal)
-admin.site.register(User)
+#admin.site.register(User)
 admin.site.register(Area)
 admin.site.register(Category)
 

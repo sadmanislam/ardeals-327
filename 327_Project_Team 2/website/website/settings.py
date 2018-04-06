@@ -32,7 +32,10 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.twitter',
-    'rest_framework'
+    'rest_framework',
+    'recommends',
+    'recommends.storages.djangoorm'
+
 ]
 
 MIDDLEWARE = [
@@ -121,3 +124,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
+
+LOGIN_URL = '/accounts/login/'
+
+
+

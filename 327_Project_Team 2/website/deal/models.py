@@ -1,16 +1,20 @@
+from __future__ import unicode_literals
+#from datetime import datetime
 from django.db import models
-from datetime import datetime
+from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
+from django.utils.encoding import python_2_unicode_compatible
 
 
-class User(models.Model):
-    firstName = models.CharField(max_length=550)
-    lastName = models.CharField(max_length=550)
-    email = models.CharField(max_length=550)
-    password = models.CharField(max_length=550)
-    type = models.CharField(max_length=550)
+#class User(models.Model):
+ #   firstName = models.CharField(max_length=550)
+  #  lastName = models.CharField(max_length=550)
+   # email = models.CharField(max_length=550)
+    #password = models.CharField(max_length=550)
+    #type = models.CharField(max_length=550)
 
-    def __str__(self):
-        return self.firstName + ' ' + self.lastName
+    #def __str__(self):
+     #   return self.firstName + ' ' + self.lastName
 
 
 class Area(models.Model):
@@ -27,6 +31,7 @@ class Category(models.Model):
         return self.name
 
 
+@python_2_unicode_compatible
 class Deal(models.Model):
     publisher = models.CharField(max_length=250)
     description_small = models.TextField()
@@ -53,4 +58,28 @@ class Deal(models.Model):
 
     def __str__(self):
         return self.description_small + ' - ' + self.publisher + ' - ' + str(self.validity)
+
+    @models.permalink
+    def get_absolute_url(self):
+        return 'Deal detail', [self.id]
+
+    def sites_str(self):
+        return ', '.join([s.name for s in self.sites.all()])
+
+    sites_str.short_description = 'sites'
+
+
+@python_2_unicode_compatible
+class Vote(models.Model):
+    """A Vote on a Deal"""
+    user = models.ForeignKey(User, related_name='votes', on_delete=models.CASCADE)
+    product = models.ForeignKey(Deal, on_delete=models.CASCADE)
+    site = models.ForeignKey(Site, on_delete=models.CASCADE)
+    score = models.FloatField()
+
+    def __str__(self):
+        return "Vote"
+
+
+
 
