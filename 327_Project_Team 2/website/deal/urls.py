@@ -1,12 +1,14 @@
 from django.conf.urls import url
 from . import views
+from django.urls import path
 
 app_name = 'deal'
 
 #deal/
-urlpatterns = [
-    url(r'^$', views.index, name='index'),
+urlpatterns = {
+    # url(r'^$', views.index, name='index'),
+    path('', views.index, name='index'),
     url(r'^all/', views.alldeals, name='alldeals'),
     url(r'^(?P<deal_id>[0-9]+)/$', views.detail, name='detail'),
 
-]
+}

@@ -5,7 +5,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import DealSerializer
-from . models import Deal
+from .models import Deal
+from django.contrib.auth.decorators import login_required
 
 
 # Lists all deals or create a new one
@@ -32,9 +33,9 @@ class DealDetail(APIView):
             raise Http404
 
     def get(self, request, pk):
-         snippet = self.get_object(pk)
-         serializer = DealSerializer(snippet)
-         return Response(serializer.data)
+        snippet = self.get_object(pk)
+        serializer = DealSerializer(snippet)
+        return Response(serializer.data)
 
     def put(self, request, pk):
         snippet = self.get_object(pk)
@@ -50,6 +51,7 @@ class DealDetail(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+@login_required
 def index(request):
     all_deals = Deal.objects.all()
     context = {'all_deals': all_deals}
@@ -65,7 +67,3 @@ def alldeals(request):
 def detail(request, deal_id):
     deal = get_object_or_404(Deal, pk=deal_id)
     return render(request, 'deal/detail.html', {'deal': deal})
-
-
-
-
