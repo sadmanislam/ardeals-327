@@ -4,7 +4,9 @@
       <w>dailyessentials</w>
       <w>djangoorm</w>
       <w>djangoratings</w>
+      <w>loginview</w>
       <w>storages</w>
+      <w>userdeals</w>
     </words>
   </dictionary>
 </component>

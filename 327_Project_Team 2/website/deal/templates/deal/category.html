@@ -48,7 +48,7 @@
     <div class="container">
 	  <div class="header_top">
    		<div class="logo">
-			<a href="index.html"><img src="{% static 'images/logo.png' %}" alt=""/></a>
+			<a href="{% url 'deal:index' %}"><img src="{% static 'images/logo.png' %}" alt=""/></a>
 		</div>	
 		<div class="header-bottom-right">
 	       
@@ -60,7 +60,7 @@
 				   <div class="box_content_center">
 					   <div class="menu_box_list">
 						   <ul>
-							 <li><a href="index.html">Your Profile</a></li>	
+							   <li><a href="{% url 'userdeals' %}">Your Deals</a></li>	
 						   	   <li><a href="{% url 'deal:index' %}">Deal Teal!</a></li>						   	   		   
 							   <li><a href="{% url 'deal:alldeals' %}">Deals</a></li> 							   
 							   <li><a href="{% url 'deal:deal-add' %}">Add Your Deal!</a></li>
@@ -108,7 +108,7 @@
 						<li class="subitem2"><a href="{% url 'deal:accessories' %}">Accessories </a></li>
 						<li class="subitem3"><a href="{% url 'deal:services' %}">Services </a></li>
 						<li class="subitem3"><a href="{% url 'deal:electronics' %}">Electronics </a></li>
-						<li class="subitem3"><a href="{% url 'deal:dailyessentials' %}">Daily Essentials </a></li>	
+						<li class="subitem3"><a href="{% url 'deal:dailyessentials' %}">Daily Essentials </a></li>		
 					</ul>
 		         </li>
 			 </ul>
@@ -147,6 +147,10 @@
 			</ul>
 		</div>
 		<ul class="box2_list">
+				<li><a href="{% url 'userdeals' %}">Your Deals</a></li>	
+				<li><a href="{% url 'deal:index' %}">Deal Teal!</a></li>						   	   		   
+				<li><a href="{% url 'deal:alldeals' %}">Deals</a></li> 							   
+				<li><a href="{% url 'deal:deal-add' %}">Add Your Deal!</a></li>
 				
 		 </ul>
 		 <ul class="box3_list">

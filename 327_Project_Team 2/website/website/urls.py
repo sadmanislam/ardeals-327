@@ -20,15 +20,16 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from deal import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
 
 urlpatterns = {
+    path('', views.loginview, name='loginview'),
     path('admin/', admin.site.urls),
     path('deal/', include('deal.urls'), name='home'),
     path('deal/info/', views.DealList.as_view(), name='info_json'),
     url(r'^deal/info/(?P<pk>[0-9]+)/', views.DealDetail.as_view(), name='detail_json'),
     path('accounts/', include('allauth.urls'), name='account'),
-
-
+    path('accounts/profile/', views.userdeals, name='userdeals'),
 }
 
 urlpatterns = format_suffix_patterns(urlpatterns)

@@ -544,6 +544,7 @@ ul.box1_list li a{
     font-weight: 700;
 }
 ul.box2_list{
+	background: #f9f9f9;
 	padding: 0 0 0 2em;
     margin: 3em 0 0 0;
     list-style: none;
@@ -1073,6 +1074,7 @@ h3.like, h3.recent{
 	font-style: italic;
 	font-weight: bold;
 	margin-bottom: 1em;
+	margin-top: 100em;
 }
 h3.recent{
 	padding-top:2em;
@@ -1865,6 +1867,7 @@ ul.previous {
 	padding:0;
 }
 ul.box2_list {
+	background: #f9f9f9;
   padding: 0 0 0 1em;
   margin: 1em 0 0 0;
 }  

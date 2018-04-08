@@ -1,4 +1,6 @@
 {
   "deal/tests/test_models.py::TestModels::()::test_deal_exits": true,
-  "deal/tests/test_urls.py::TestUrls::()::test_account_url": true
+  "deal/tests/test_urls.py::TestUrls::()::test_account_url": true,
+  "deal/tests/test_urls.py::TestUrls::()::test_home_url": true,
+  "deal/tests/test_urls.py::TestUrls::()::test_login_url": true
 }

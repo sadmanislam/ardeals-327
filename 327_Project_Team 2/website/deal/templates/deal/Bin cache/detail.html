@@ -8,12 +8,13 @@
 
 	 <p><a href="/{{deal.id}}">{{deal.publisher}}</a></p>
 
-						{% for d in all_deals %}		
-						{% if str(deal.cateogry) == str(d.category) %} 
+						{% for d in all_deals %}	
+						{% ifequal deal.cateogry d.category %}	
+						
 									 						
 					     <p><a href="/{{deal.id}}">{{d.publisher}}</a></p>
 					  	
-					    {% endif %}			
+					    {% endifequal %}		
 						{% endfor %}
 
 

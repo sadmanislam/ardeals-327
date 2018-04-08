@@ -8,6 +8,7 @@ from .serializers import DealSerializer
 from .models import Deal, Category
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import HttpResponseRedirect
 
 
 # Lists all deals or create a new one
@@ -59,12 +60,14 @@ def index(request):
     return render(request, 'deal/index.html', context)
 
 
+@login_required
 def alldeals(request):
     all_deals = Deal.objects.all()
     context = {'all_deals': all_deals}
     return render(request, 'deal/deals.html', context)
 
 
+@login_required
 def apparels(request):
     category = Category.objects.filter(name="Apparels")
     all_deals = Deal.objects.all()
@@ -73,6 +76,7 @@ def apparels(request):
     return render(request, 'deal/category.html', context)
 
 
+@login_required
 def food(request):
     category = Category.objects.filter(name="Food")
     all_deals = Deal.objects.all()
@@ -81,6 +85,7 @@ def food(request):
     return render(request, 'deal/category.html', context)
 
 
+@login_required
 def accessories(request):
     category = Category.objects.filter(name="Accessories")
     all_deals = Deal.objects.all()
@@ -89,6 +94,7 @@ def accessories(request):
     return render(request, 'deal/category.html', context)
 
 
+@login_required
 def services(request):
     category = Category.objects.filter(name="Services")
     all_deals = Deal.objects.all()
@@ -97,6 +103,7 @@ def services(request):
     return render(request, 'deal/category.html', context)
 
 
+@login_required
 def electronics(request):
     category = Category.objects.filter(name="Electronics")
     all_deals = Deal.objects.all()
@@ -105,6 +112,7 @@ def electronics(request):
     return render(request, 'deal/category.html', context)
 
 
+@login_required
 def dailyessentials(request):
     category = Category.objects.filter(name="Daily Essentials")
     all_deals = Deal.objects.all()
@@ -113,6 +121,7 @@ def dailyessentials(request):
     return render(request, 'deal/category.html', context)
 
 
+@login_required
 def detail(request, deal_id):
     deal = get_object_or_404(Deal, pk=deal_id)
     all_deals = Deal.objects.all()
@@ -121,7 +130,33 @@ def detail(request, deal_id):
     return render(request, 'deal/detail.html', context)
 
 
+def loginview(request):
+    return HttpResponseRedirect('accounts/login')
+
+@login_required
+def userdeals(request):
+    all_deals = Deal.objects.filter(user=request.user)
+    context = {'all_deals': all_deals}
+    return render(request, 'deal/deals.html', context)
+
+
+
+
+#class DealCreate(CreateView):
+ #   model = Deal
+  #  fields = ['publisher', 'user', 'description_small', 'description_long', 'main_attraction', 'type', 'genre',
+   #           'contact', 'validity', 'category', 'address', 'area', 'longitude', 'latitude', 'thumbnail']
+
+    #def get_form(self, fields):
+     #   form = super(DealCreate, self).get_form(form_class)
+        # the actual modification of the form
+      #  form.instance.author = self.request.user
+       # return form
+
+
 class DealCreate(CreateView):
     model = Deal
     fields = ['publisher', 'user', 'description_small', 'description_long', 'main_attraction', 'type', 'genre',
               'contact', 'validity', 'category', 'address', 'area', 'longitude', 'latitude', 'thumbnail']
+
+
