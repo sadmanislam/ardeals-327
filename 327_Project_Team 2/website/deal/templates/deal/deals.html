@@ -13,7 +13,10 @@
 <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
 <script>$(document).ready(function(c) {
 	$('.alert-close').on('click', function(c){
@@ -57,10 +60,10 @@
 				   <div class="box_content_center">
 					   <div class="menu_box_list">
 						   <ul>
-							  <li><a href="index.html">Latest Offers!</a></li>			   
-							   <li><a href="sales.html">Deals</a></li> 
-							   <li><a href="about.html">About Us</a></li>
-							   <li><a href="contact.html">Contact</a></li>
+						 <li><a href="index.html">Your Profile</a></li>	
+						   	   <li><a href="{% url 'deal:index' %}">Deal Teal!</a></li>						   	   		   
+							   <li><a href="{% url 'deal:alldeals' %}">Deals</a></li> 							   
+							   <li><a href="{% url 'deal:deal-add' %}">Add Your Deal!</a></li>
 						   </ul>
 						</div>
 						<a class="boxclose" id="boxclose"><img src="{% static 'images/close.png' %}" alt=""/></a>
@@ -96,16 +99,16 @@
 </div>
 <div class="about_top">
   <div class="container">
-		<div class="col-md-3">
+		<div class="col-md-2">
 			<ul class="menu1">
-				<li class="item1"><a href="#" class="">What Deal To Go For?<img class="arrow-img" src="{% static 'images/arrow.png' %}" alt=""/> </a>
+				<li class="item1"><a href="#" class="">Categories<img class="arrow-img" src="{% static 'images/arrow.png' %}" alt=""/> </a>
 					<ul class="cute" style="display: none; overflow: hidden;">
-						<li class="subitem1"><a href="food.html">Food </a></li>
-						<li class="subitem2"><a href="apparels.html">Apparels </a></li>
-						<li class="subitem2"><a href="apparels.html">Accessories </a></li>
-						<li class="subitem3"><a href="services.html">Services </a></li>
-						<li class="subitem3"><a href="electronics.html">Electronics </a></li>
-						<li class="subitem3"><a href="dailyessentials.html">Daily Essentials </a></li>
+						<li class="subitem2"><a href="{% url 'deal:apparels' %}">Apparels </a></li>
+						<li class="subitem1"><a href="{% url 'deal:food' %}">Food </a></li>
+						<li class="subitem2"><a href="{% url 'deal:accessories' %}">Accessories </a></li>
+						<li class="subitem3"><a href="{% url 'deal:services' %}">Services </a></li>
+						<li class="subitem3"><a href="{% url 'deal:electronics' %}">Electronics </a></li>
+						<li class="subitem3"><a href="{% url 'deal:dailyessentials' %}">Daily Essentials </a></li>	
 					</ul>
 		         </li>
 			 </ul>
@@ -150,46 +153,26 @@
 				
 		 </ul>
 		</div>
-		<div class="col-md-9 content_right">
+		<div class="col-md-10 content_right">
 		   <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="index.html" title="Go to Home Page">Home</a>&nbsp;
+                       <a href="{% url 'deal:index' %}" title="Go to Home Page">Home</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        Apparel&nbsp;
-                        <span>&gt;</span>
+                        All Deals&nbsp;
+                       
                     </li>
-                    <li class="women">
-                        Women
-                    </li>
+                    
                </ul>
                 <ul class="previous">
-                	<li><a href="index.html">Back to Previous Page</a></li>
+                	<li><a href="{% url 'deal:index' %}">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="mens-toolbar">
-                 <div class="sort">
-               	   <div class="sort-by">
-		            <label>Sort By</label>
-		            <select>
-		                            <option value="">
-		                    Position                </option>
-		                            <option value="">
-		                    Name                </option>
-		                            <option value="">
-		                    Price                </option>
-		            </select>
-		            <a href=""><img src="{% static 'images/arrow2.gif' %}" alt="" class="v-middle"></a>
-                   </div>
-    		     </div>
-    	        <ul class="women_pagenation dc_paginationA dc_paginationA06">
-			     <li><a href="#" class="previous">Page:</a></li>
-			     <li class="active"><a href="#">1</a></li>
-			     <li><a href="#">2</a></li>
-		  	    </ul>
+                
                 <div class="clearfix"></div>		
 		        </div>		
 				<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
@@ -198,31 +181,23 @@
 						<a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list" title="list">List View</a>
 					</div>
 					<div class="pages">   
-        	 <div class="limiter visible-desktop">
-               <label>Show</label>
-                  <select>
-                            <option value="" selected="selected">
-                    9                </option>
-                            <option value="">
-                    15                </option>
-                            <option value="">
-                    30                </option>
-                  </select> per page        
-               </div>
+        
        	   </div>
 					<div class="clearfix"></div>
 					<ul>
+							{% for deal in all_deals %}							
+		
 					  <li>
 							<a class="cbp-vm-image" href="single.html">
 							 <div class="view view-first">
 					   		  <div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="{% static 'images/s1.jpg' %}" class="img-responsive" alt=""/>
+									<img src="{{ deal.thumbnail.url }}" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title"> Title </p>
+										 <p class="title" style="font-family: 'Cinzel', serif;" ><font color="black" ><b> {{deal.publisher}}</b></font> </p>
 									   </div>
-									   <div class="price"> Text </div>
+									   <div class="price" style="font-family: 'IBM Plex Serif', serif;"> {{ deal.description_small }} </div>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -230,79 +205,17 @@
 		                      </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								Silver beet shallot wakame tomatillo salsify mung bean beetroot groundnut.
-							</div>
-							<a class="cbp-vm-icon cbp-vm-add" href="single.html">Add to cart</a>
-						</li>
-						<li>
-							<a class="cbp-vm-image" href="single.html">
-							  <div class="view view-first">
-					   		  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="{% static 'images/s2.jpg' %}" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title"> Title</p>
-									   </div>
-									   <div class="price"> Text </div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                      </div>
-							 </a>
+								{{ deal.description_long }}
+							</div>	
 							<div class="cbp-vm-details">
-								Wattle seed bunya nuts spring onion okra garlic bitterleaf zucchini.
-							</div>
-							<a class="cbp-vm-icon cbp-vm-add" href="single.html">Add to cart</a>
-						</li>
-						<li>
-							<a class="cbp-vm-image" href="single.html">
-								<div class="view view-first">
-					   		  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="{% static 'images/s3.jpg' %}" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Title </p>
-									   </div>
-									   <div class="price"> text </div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                      </div>
-							</a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean.
-							</div>
-							<a class="cbp-vm-icon cbp-vm-add" href="single.html">Add to cart</a>
-						</li>
+								<p>Deal Expires in </p>
+								{{ deal.validity|timeuntil }}
+							</div>						
+						</li>									
+							{% endfor %}
 						
-				
+						
 					
-						<li class="last">
-							<a class="cbp-vm-image" href="single.html">
-								<div class="view view-first">
-					   		  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="{% static 'images/s8.jpg' %}" class="img-responsive" alt=""/>
-								    <div class="product_container">
-									   <div class="cart-left">
-										 <p class="title"> Title </p>
-									   </div>
-									   <div class="price"> text </div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                      </div>
-							</a>
-							<div class="cbp-vm-details">
-								Kohlrabi bok choy broccoli rabe welsh onion spring onion tatsoi ricebean kombu chard.
-							</div>
-							<a class="cbp-vm-icon cbp-vm-add" href="single.html">Add to cart</a>
-						</li>
 					</ul>
 				</div>
 				<link href="{% static 'css/component.css' %}" rel='stylesheet' type='text/css' />

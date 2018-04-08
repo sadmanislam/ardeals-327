@@ -1,0 +1,17 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+		{% for deal in all_deals %}		
+	<p> {{deal.validity}} </p>
+	{% endfor %}
+
+
+				<ul>
+				{% for deal in all_deals %}		
+			{% if deal.validity|timeuntil == "1 week" or deal.validity|timeuntil == "6 days" or deal.validity|timeuntil == "5 days" or deal.validity|timeuntil == "4 days" or deal.validity|timeuntil == "3 days" or deal.validity|timeuntil == "2 days" or deal.validity|timeuntil == "1 day" or deal.validity|timeuntil == "1 hour" or deal.validity|timeuntil == "2 hours" or deal.validity|timeuntil == "3 hours" or deal.validity|timeuntil == "4 hours" or deal.validity|timeuntil == "5 hours" or deal.validity|timeuntil == "6 hours" or deal.validity|timeuntil == "7 hours" or deal.validity|timeuntil == "8 hours" or deal.validity|timeuntil == "9 hours" or deal.validity|timeuntil == "10 hours" or deal.validity|timeuntil == "11 hours" or deal.validity|timeuntil == "12 hours" or deal.validity|timeuntil == "13 hours" or deal.validity|timeuntil == "14 hours" or deal.validity|timeuntil == "15 hours" or deal.validity|timeuntil == "16 hours" or deal.validity|timeuntil == "17 hours" or deal.validity|timeuntil == "18 hours" or deal.validity|timeuntil == "19 hours" or deal.validity|timeuntil == "20 hours" or deal.validity|timeuntil == "21 hours" or deal.validity|timeuntil == "22 hours" or deal.validity|timeuntil == "23 hours" %}  				 						
+					     <li><a href="/{{deal.id}}">{{deal.publisher}}</a></li>
+					     {% endif %}			
+				{% endfor %}
+				</ul>
+				</body>

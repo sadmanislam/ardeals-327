@@ -1475,6 +1475,16 @@ a.forgot {
 	font-size: 1em;
 	padding: 0.5em;
 }
+
+.form-input{
+	border: 1px solid #EEE;
+	outline-color:#FF5B36;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+
+}
+
 .checkbox {
 	margin-bottom: 4px;
 	padding-left: 27px;
@@ -1545,7 +1555,7 @@ a.forgot {
 .register-but{
 	margin-top:1em;
 }
-.register-but form input[type="submit"] {
+.register-but button [type="submit"] {
 	background:#df1f26;
 	color: #FFF;
 	font-size: 0.8em;
@@ -1559,7 +1569,7 @@ a.forgot {
 	border:none;
 	outline:none;
 }
-.register-but input[type="submit"]:hover {
+.register-but button [type="submit"] {
 	background:#000;
 }
 .register-bottom-grid {

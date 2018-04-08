@@ -2,7 +2,7 @@
 <html>
 <head>
 	{% load staticfiles %}
-<title>{% for c in category %}{{ c.name }}{% endfor %} | Deal Teal</title>
+<title>Add Deal | Deal Teal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Deal Teal" />
@@ -132,20 +132,7 @@
 			
 			});
 		</script>
-			<div class="box1">
-
-			<ul class="box1_list">
-				<h5>HURRY UP! </h5>
-				<H6>THESE OFFERS EXPIRE SOON</H6>
-
-			{% for deal in all_deals %}		
-			{% if deal.validity|timeuntil == "1 week" or deal.validity|timeuntil == "6 days" or deal.validity|timeuntil == "5 days" or deal.validity|timeuntil == "4 days" or deal.validity|timeuntil == "3 days" or deal.validity|timeuntil == "2 days" or deal.validity|timeuntil == "1 day" or deal.validity|timeuntil == "1 hour" or deal.validity|timeuntil == "2 hours" or deal.validity|timeuntil == "3 hours" or deal.validity|timeuntil == "4 hours" or deal.validity|timeuntil == "5 hours" or deal.validity|timeuntil == "6 hours" or deal.validity|timeuntil == "7 hours" or deal.validity|timeuntil == "8 hours" or deal.validity|timeuntil == "9 hours" or deal.validity|timeuntil == "10 hours" or deal.validity|timeuntil == "11 hours" or deal.validity|timeuntil == "12 hours" or deal.validity|timeuntil == "13 hours" or deal.validity|timeuntil == "14 hours" or deal.validity|timeuntil == "15 hours" or deal.validity|timeuntil == "16 hours" or deal.validity|timeuntil == "17 hours" or deal.validity|timeuntil == "18 hours" or deal.validity|timeuntil == "19 hours" or deal.validity|timeuntil == "20 hours" or deal.validity|timeuntil == "21 hours" or deal.validity|timeuntil == "22 hours" or deal.validity|timeuntil == "23 hours" %}  				 						
-					     <li><a href="/deal/{{ deal.id }}/">{{ deal.publisher }}</a></li>
-					     {% endif %}			
-						 {% endfor %}	
-		
-			</ul>
-		</div>
+			
 		<ul class="box2_list">
 				
 		 </ul>
@@ -161,7 +148,7 @@
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        {% for c in category %}{{ c.name }}{% endfor %}&nbsp;
+                        Add Your Own Deal&nbsp;
                        
                     </li>
                     
@@ -177,48 +164,52 @@
 		        </div>		
 				<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
 					<div class="cbp-vm-options">
-						<a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid" title="grid">Grid View</a>
-						<a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list" title="list">List View</a>
+						
 					</div>
-					<div class="pages">   
+					  
         
        	   </div>
 					<div class="clearfix"></div>
-					<ul>
-							{% for c in category %}
-							{% for deal in c.deal_set.all %}
-		
-					  <li>
-							<a class="cbp-vm-image" href="single.html">
-							 <div class="view view-first">
-					   		  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="{{ deal.thumbnail.url }}" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title" style="font-family: 'Cinzel', serif;" ><font color="black" ><b> {{deal.publisher}}</b></font> </p>
-									   </div>
-									   <div class="price" style="font-family: 'IBM Plex Serif', serif;"> {{ deal.description_small }} </div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                      </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								{{ deal.description_long }}
-							</div>	
-							<div class="cbp-vm-details">
-								<p>Deal Expires in </p>
-								{{ deal.validity|timeuntil }}
-							</div>						
-						</li>
-							{% endfor %}		
-							{% endfor %}
-						
-						
-					
-					</ul>
+
+							   <div class="register">
+		  	  <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+		  	  {% csrf_token %} 				 
+					 <h3>DEAL INFORMATION</h3>
+
+				     <div>  
+							 <div>
+							 	<div class="col-sm-offset-2 col-sm-10">
+							 		<span class="text-danger small">{{ field.errors }}</span>
+							 	</div>
+							 	 {% for field in form %}
+
+								<span><label class="control-label ">{{ field.label_tag }}*</label></span>
+								<div >{{ field }}</div>
+								{% endfor %}
+							 </div>	
+							 <div class="form-group">
+							 	 <button type="submit" class="btn btn-success" margin-top: 15px;>Add Deal</button>
+					   
+					   			<div class="clearfix" > </div>
+							 	
+							 </div>						
+							 <div class="clearfix"> </div>
+				     		
+					 </div>
+				</form>
+				<div class="clearfix"> </div>
+				
+				  
+				   
+				
+		   </div>
+	    </div>
+	    <div class="clearfix"> </div> 
+				   
+
+
+
+
 				</div>
 				<link href="{% static 'css/component.css' %}" rel='stylesheet' type='text/css' />
                 <script src="{% static 'js/cbpViewModeSwitch.js' %}" type="text/javascript"></script>

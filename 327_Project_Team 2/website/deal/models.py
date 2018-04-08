@@ -6,6 +6,7 @@ from django.contrib.sites.models import Site
 from django.utils.encoding import python_2_unicode_compatible
 from django.contrib.contenttypes.fields import GenericRelation
 from star_ratings.models import Rating
+from django.urls import reverse
 
 
 #class User(models.Model):
@@ -35,38 +36,44 @@ class Category(models.Model):
         return self.name
 
 
+class Type(models.Model):
+    name = models.CharField(max_length=200)
+    objects = models.Manager()
+
+    def __str__(self):
+        return self.name
+
+
 @python_2_unicode_compatible
 class Deal(models.Model):
     publisher = models.CharField(max_length=250)
     description_small = models.TextField()
     description_long = models.TextField()
-    user_rating = models.PositiveSmallIntegerField()
+    # user_rating = IntegerField(default=0, max_length=5)
+    # user_rating = models.PositiveSmallIntegerField(default=0)
     # ratings = GenericRelation(Rating, related_query_name='rating')
     # ratings = models.int()
-    keyword1 = models.CharField(max_length=250)
-    keyword2 = models.CharField(max_length=250)
-    keyword3 = models.CharField(max_length=250)
+    main_attraction = models.CharField(max_length=250)
+    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    genre = models.CharField(max_length=250)
     contact = models.CharField(max_length=15)
     validity = models.DateField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    street = models.CharField(max_length=550)
+    address = models.CharField(max_length=550)
     area = models.ForeignKey(Area, on_delete=models.CASCADE)
-    city = models.CharField(max_length=550)
-    country = models.CharField(max_length=550)
+    city = models.CharField(max_length=550, default="Dhaka")
+    country = models.CharField(max_length=550, default="Bangladesh")
     longitude = models.IntegerField()
     latitude = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    deal_logo = models.CharField(max_length=1000, default='xxx')
     objects = models.Manager()
-    #thumbnail
-    #image
+    thumbnail = models.FileField()
+
+    def get_absolute_url(self):
+        return reverse('deal:alldeals')
 
     def __str__(self):
-        return self.description_small + ' - ' + self.publisher + ' - ' + str(self.validity)
-
-    @models.permalink
-    def get_absolute_url(self):
-        return 'Deal detail', [self.id]
+        return self.publisher + ' - ' + self.description_small + ' - ' + str(self.validity)
 
     def sites_str(self):
         return ', '.join([s.name for s in self.sites.all()])

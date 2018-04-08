@@ -7,6 +7,7 @@ from rest_framework import status
 from .serializers import DealSerializer
 from .models import Deal, Category
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 # Lists all deals or create a new one
@@ -72,6 +73,55 @@ def apparels(request):
     return render(request, 'deal/category.html', context)
 
 
+def food(request):
+    category = Category.objects.filter(name="Food")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+def accessories(request):
+    category = Category.objects.filter(name="Accessories")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+def services(request):
+    category = Category.objects.filter(name="Services")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+def electronics(request):
+    category = Category.objects.filter(name="Electronics")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+def dailyessentials(request):
+    category = Category.objects.filter(name="Daily Essentials")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
 def detail(request, deal_id):
     deal = get_object_or_404(Deal, pk=deal_id)
-    return render(request, 'deal/detail.html', {'deal': deal})
+    all_deals = Deal.objects.all()
+    context = {'deal': deal,
+               'all_deals': all_deals}
+    return render(request, 'deal/detail.html', context)
+
+
+class DealCreate(CreateView):
+    model = Deal
+    fields = ['publisher', 'user', 'description_small', 'description_long', 'main_attraction', 'type', 'genre',
+              'contact', 'validity', 'category', 'address', 'area', 'longitude', 'latitude', 'thumbnail']

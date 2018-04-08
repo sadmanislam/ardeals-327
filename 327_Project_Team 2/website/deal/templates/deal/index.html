@@ -117,10 +117,10 @@
 				   <div class="box_content_center">
 					   <div class="menu_box_list">
 						   <ul>	
-						   	   <li><a href="index.html">Latest Offers!</a></li>			   
-							   <li><a href="{% url 'deal:alldeals' %}">Deals</a></li> 
-							   <li><a href="about.html">About Us</a></li>
-							   <li><a href="contact.html">Contact</a></li>
+						   	   <li><a href="index.html">Your Profile</a></li>	
+						   	   <li><a href="{% url 'deal:index' %}">Deal Teal!</a></li>						   	   		   
+							   <li><a href="{% url 'deal:alldeals' %}">Deals</a></li> 							   
+							   <li><a href="{% url 'deal:deal-add' %}">Add Your Deal!</a></li>
 						   </ul>
 						</div>
 						<a class="boxclose" id="boxclose"><img src="{% static 'images/close.png' %}" alt=""/></a>
@@ -183,7 +183,11 @@
 					<ul class="cute" style="display: none; overflow: hidden;">
 						
 						<li class="subitem2"><a href="{% url 'deal:apparels' %}">Apparels </a></li>
-						
+						<li class="subitem1"><a href="{% url 'deal:food' %}">Food </a></li>
+						<li class="subitem2"><a href="{% url 'deal:accessories' %}">Accessories </a></li>
+						<li class="subitem3"><a href="{% url 'deal:services' %}">Services </a></li>
+						<li class="subitem3"><a href="{% url 'deal:electronics' %}">Electronics </a></li>
+						<li class="subitem3"><a href="{% url 'deal:dailyessentials' %}">Daily Essentials </a></li>						
 					</ul>
 		         </li>
 			 </ul>
@@ -245,7 +249,7 @@
 			    <h5>Food</h5>
    				  <div class="view view-first">
                      <img src="{% static 'images/pic1.jpg' %}" class="img-responsive" alt=""/>
-   				       <a href="single.html"><div class="mask">
+   				       <a href="{% url 'deal:food' %}"><div class="mask">
    			            <h3>Quick Look</h3>                      
                       </div></a>
                    </div> 
@@ -255,14 +259,14 @@
 			    <h5>Apparels</h5>
    				  <div class="view view-first">
                      <img src="{% static 'images/pic2.jpg' %}" class="img-responsive" alt=""/>
-                     <a href="single.html"><div class="mask mask1">
+                     <a href="{% url 'deal:apparels' %}"><div class="mask mask1">
    			            <h3>Quick Look</h3>                        
                       </div></a>
    				  </div> 
              			  </div>
 			</div>
 			<div class="col-md-4">
-			  <a href="single.html"><div class="grid1 span_1">
+			  <a href="{% url 'deal:services' %}"><div class="grid1 span_1">
 			  	<h5>Services</h5>
 			  	<div class="view view-first">				  
                      <img src="{% static 'images/service.png' %}" class="img-responsive" alt=""/>
@@ -270,14 +274,14 @@
    				      
    			</div> 
                </a></div>
-			   <a href="single.html"><div class="grid2 span_1">
+			   <a href="{% url 'deal:electronics' %}"><div class="grid2 span_1">
 				  <div class="view view-first">
                      <img src="{% static 'images/pic4.jpeg' %}" class="img-responsive" alt=""/>
    				      <h5>Electronics</h5>
    				 
    			      </div> 
               </div></a>
-              <a href="single.html"> <div class="grid2 span_1">
+              <a href="{% url 'deal:dailyessentials' %}"> <div class="grid2 span_1">
 				  <div class="view view-first">
                      <img src="{% static 'images/pic5.jpg' %}" class="img-responsive" alt=""/>
    				      <h5>Daily Essentials</h5>

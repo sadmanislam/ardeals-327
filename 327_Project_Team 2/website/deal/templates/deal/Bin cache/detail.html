@@ -1,0 +1,29 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+		{% for deal in all_deals %}		
+	<p> {{deal.validity|timeuntil}} </p>
+	{% endfor %}
+
+	 <p><a href="/{{deal.id}}">{{deal.publisher}}</a></p>
+
+						{% for d in all_deals %}		
+						{% if str(deal.cateogry) == str(d.category) %} 
+									 						
+					     <p><a href="/{{deal.id}}">{{d.publisher}}</a></p>
+					  	
+					    {% endif %}			
+						{% endfor %}
+
+
+						{% for d in all_deals %}		
+						{% if deal.cateogry == d.category  %} 
+						{% if deal.main_attraction == d.main_attraction or deal.type == d.type or deal.genre == d.genre  %}   				 						
+					     <p><a href="/{{deal.id}}">{{d.publisher}}</a></p>
+					    {% endif %}	
+					    {% endif %}			
+						{% endfor %}
+
+			
+				</body>
