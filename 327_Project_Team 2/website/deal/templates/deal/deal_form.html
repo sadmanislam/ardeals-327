@@ -13,6 +13,7 @@
 <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
@@ -158,7 +159,7 @@
                     
                </ul>
                 <ul class="previous">
-                	<li><a href="{% url 'deal:index' %}">Back to Previous Page</a></li>
+                	<li><a href="{% url 'deal:index' %}">Back to Homepage</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
@@ -178,7 +179,7 @@
 							   <div class="register">
 		  	  <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
 		  	  {% csrf_token %} 				 
-					 <h3>DEAL INFORMATION</h3>
+					 <h3 style="color: #59dbb4; font-family: 'Cinzel', serif;" >DEAL INFORMATION</h3>
 
 				     <div>  
 							 <div>

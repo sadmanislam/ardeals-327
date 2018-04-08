@@ -5,10 +5,11 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import DealSerializer
-from .models import Deal, Category
+from .models import Deal, Category, Area
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
 
 
 # Lists all deals or create a new one
@@ -122,6 +123,103 @@ def dailyessentials(request):
 
 
 @login_required
+def bcity(request):
+    category = Area.objects.filter(name="Bashundhara R/A")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+
+@login_required
+def tejgaon(request):
+    category = Area.objects.filter(name="Tejgaon")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+@login_required
+def pd(request):
+    category = Area.objects.filter(name="Puran Dhaka")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+@login_required
+def mirpur(request):
+    category = Area.objects.filter(name="Mirpur")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+@login_required
+def dhanmondi(request):
+    category = Area.objects.filter(name="Dhanmondi")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+@login_required
+def uttara(request):
+    category = Area.objects.filter(name="Uttara")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+@login_required
+def lalmatia(request):
+    category = Area.objects.filter(name="Lalmatia")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+@login_required
+def moghbazar(request):
+    category = Area.objects.filter(name="Moghbazar")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+@login_required
+def banani(request):
+    category = Area.objects.filter(name="Banani")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+
+@login_required
+def g1(request):
+    category = Area.objects.filter(name="Gulshan-1")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+@login_required
+def g2(request):
+    category = Area.objects.filter(name="Gulshan-2")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
+
+
+@login_required
 def detail(request, deal_id):
     deal = get_object_or_404(Deal, pk=deal_id)
     all_deals = Deal.objects.all()
@@ -133,25 +231,12 @@ def detail(request, deal_id):
 def loginview(request):
     return HttpResponseRedirect('accounts/login')
 
+
 @login_required
 def userdeals(request):
     all_deals = Deal.objects.filter(user=request.user)
     context = {'all_deals': all_deals}
-    return render(request, 'deal/deals.html', context)
-
-
-
-
-#class DealCreate(CreateView):
- #   model = Deal
-  #  fields = ['publisher', 'user', 'description_small', 'description_long', 'main_attraction', 'type', 'genre',
-   #           'contact', 'validity', 'category', 'address', 'area', 'longitude', 'latitude', 'thumbnail']
-
-    #def get_form(self, fields):
-     #   form = super(DealCreate, self).get_form(form_class)
-        # the actual modification of the form
-      #  form.instance.author = self.request.user
-       # return form
+    return render(request, 'deal/userdeals.html', context)
 
 
 class DealCreate(CreateView):
@@ -159,4 +244,15 @@ class DealCreate(CreateView):
     fields = ['publisher', 'user', 'description_small', 'description_long', 'main_attraction', 'type', 'genre',
               'contact', 'validity', 'category', 'address', 'area', 'longitude', 'latitude', 'thumbnail']
 
+
+class DealUpdate(UpdateView):
+    model = Deal
+    fields = ['publisher', 'user', 'description_small', 'description_long', 'main_attraction', 'type', 'genre',
+              'contact', 'validity', 'category', 'address', 'area', 'longitude', 'latitude', 'thumbnail']
+    #template_name_suffix = '_update_form'
+
+
+class DealDelete(DeleteView):
+    model = Deal
+    success_url = reverse_lazy('userdeals')
 

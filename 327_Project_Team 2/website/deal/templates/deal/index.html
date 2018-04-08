@@ -179,7 +179,7 @@
 	<div class="container">
 		<div class="col-md-3">
 			<ul class="menu1">
-				<li class="item1"><a href="#" class="">What Deal To Go For?<img class="arrow-img" src="{% static 'images/arrow.png' %}" alt=""/> </a>
+				<li class="item1" style="margin-top: 10em;"><a href="#" class="">What Deal To Go For?<img class="arrow-img" src="{% static 'images/arrow.png' %}" alt=""/> </a>
 					<ul class="cute" style="display: none; overflow: hidden;">
 						
 						<li class="subitem2"><a href="{% url 'deal:apparels' %}">Apparels </a></li>
@@ -225,6 +225,26 @@
 		
 			</ul>
 		</div>
+
+			 <ul class="box3_list">
+				<ul class="menu1">
+				<li class="item1"><a href="#" style="font-size: 16px ">Deals By Location?<img class="arrow-img" src="{% static 'images/arrow.png' %}" alt=""/> </a>
+					<ul class="cute" style="display: none; overflow: hidden;">
+						
+						<li class="subitem2"><a href="{% url 'deal:bcity' %}"> Bashundhara R/A </a></li>
+						<li class="subitem1"><a href="{% url 'deal:tejgaon' %}"> Tejgaon </a></li>
+						<li class="subitem2"><a href="{% url 'deal:pd' %}"> Puran Dhaka </a></li>
+						<li class="subitem3"><a href="{% url 'deal:mirpur' %}"> Mirpur </a></li>
+						<li class="subitem3"><a href="{% url 'deal:dhanmondi' %}"> Dhanmondi </a></li>
+						<li class="subitem3"><a href="{% url 'deal:uttara' %}"> Uttara </a></li>	
+						<li class="subitem2"><a href="{% url 'deal:lalmatia' %}"> Lalmatia </a></li>
+						<li class="subitem3"><a href="{% url 'deal:moghbazar' %}"> Moghbazar </a></li>
+						<li class="subitem3"><a href="{% url 'deal:banani' %}"> Banani </a></li>
+						<li class="subitem3"><a href="{% url 'deal:g1' %}"> Gulshan-1</a></li>	
+						<li class="subitem3"><a href="{% url 'deal:g2' %}">	Gulshan-2 </a></li>				
+					</ul>
+
+
 		<ul class="box2_list" style="background: #f9f9f9;">
 				<li><a href="{% url 'userdeals' %}">Your Deals</a></li>	
 				<li><a href="{% url 'deal:index' %}">Deal Teal!</a></li>						   	   		   
@@ -234,7 +254,7 @@
 		
 		</div>
 		<div class="col-md-9 content_right">
-		   <div class="client_box">
+		   <div class="client_box" style="margin-top: 3em">
 			<ul class="clients">
 				<li><img src="{% static 'images/c1.png' %}" class="img-responsive" alt=""/></li>
 				<li><img src="{% static 'images/c2.png' %}" class="img-responsive" alt=""/></li>

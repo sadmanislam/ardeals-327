@@ -15,6 +15,7 @@
 <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
 <script>$(document).ready(function(c) {
@@ -174,6 +175,23 @@
 				<li><a href="{% url 'deal:alldeals' %}">Deals</a></li> 							   
 				<li><a href="{% url 'deal:deal-add' %}">Add Your Deal!</a></li>
 		 </ul>
+
+		 <ul class="menu1">
+				<li class="item1"><a href="#" style="font-size: 16px "><b>Deals By Location?</b><img class="arrow-img" src="{% static 'images/arrow.png' %}" alt=""/> </a>
+					<ul class="cute" style="display: none; overflow: hidden;">
+						
+						<li class="subitem2"><a href="{% url 'deal:bcity' %}"> Bashundhara R/A </a></li>
+						<li class="subitem1"><a href="{% url 'deal:tejgaon' %}"> Tejgaon </a></li>
+						<li class="subitem2"><a href="{% url 'deal:pd' %}"> Puran Dhaka </a></li>
+						<li class="subitem3"><a href="{% url 'deal:mirpur' %}"> Mirpur </a></li>
+						<li class="subitem3"><a href="{% url 'deal:dhanmondi' %}"> Dhanmondi </a></li>
+						<li class="subitem3"><a href="{% url 'deal:uttara' %}"> Uttara </a></li>	
+						<li class="subitem2"><a href="{% url 'deal:lalmatia' %}"> Lalmatia </a></li>
+						<li class="subitem3"><a href="{% url 'deal:moghbazar' %}"> Moghbazar </a></li>
+						<li class="subitem3"><a href="{% url 'deal:banani' %}"> Banani </a></li>
+						<li class="subitem3"><a href="{% url 'deal:g1' %}"> Gulshan-1</a></li>	
+						<li class="subitem3"><a href="{% url 'deal:g2' %}">	Gulshan-2 </a></li>				
+					</ul>
 	
 		</div>
 		<div class="col-md-9 content_right">
@@ -225,14 +243,14 @@
 				 
 				</div>
 				<h2 class="quick">Quick Overview:</h2>
-				<p class="quick_desc"> {{ deal.description_long }}</p>
+				<p class="quick_desc" style="font-family: 'Roboto', sans-serif;"> {{ deal.description_long }}</p>
 			    <ul class="size">
-					<h3>Valid till</h3>
-					<p> {{ deal.validity }} </p>
+					<h3 style="font-family: 'Montserrat', sans-serif;"><b>Valid till</b></h3>
+					<p style="font-family: 'Roboto', sans-serif;"> {{ deal.validity }} </p>
 				</ul>
 				<ul class="size">
-					<h3>Find us at</h3>
-					<p>{{ deal.address }}</p>
+					<h3 style="font-family: 'Montserrat', sans-serif;"><b>Find us at</b></h3>
+					<p style="font-family: 'Montserrat', sans-serif;">{{ deal.address }}</p>
 				</ul>				
 			   
 			</div>
