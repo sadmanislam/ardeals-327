@@ -1,3 +1,9 @@
 [
-  "deal/tests/test_urls.py::TestUrls::()::test_index_url"
+  "deal/tests/test_urls.py::TestUrls::()::test_index_url",
+  "deal/tests/test_urls.py::TestUrls::()::test_alldeals_url",
+  "deal/tests/test_urls.py::TestUrls::()::test_details_url",
+  "deal/tests/test_urls.py::TestUrls::()::test_info_url",
+  "deal/tests/test_urls.py::TestUrls::()::test_details_json_url",
+  "deal/tests/test_views.py::TestViews::()::test_deal_detail_authenticated",
+  "deal/tests/test_views.py::TestViews::()::test_deal_detail_unauthenticated"
 ]

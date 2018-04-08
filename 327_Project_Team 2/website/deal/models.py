@@ -4,6 +4,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.utils.encoding import python_2_unicode_compatible
+from django.contrib.contenttypes.fields import GenericRelation
+from star_ratings.models import Rating
 
 
 #class User(models.Model):
@@ -19,6 +21,7 @@ from django.utils.encoding import python_2_unicode_compatible
 
 class Area(models.Model):
     name = models.CharField(max_length=200)
+    objects = models.Manager()
 
     def __str__(self):
         return self.name
@@ -26,6 +29,7 @@ class Area(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
+    objects = models.Manager()
 
     def __str__(self):
         return self.name
@@ -37,6 +41,8 @@ class Deal(models.Model):
     description_small = models.TextField()
     description_long = models.TextField()
     user_rating = models.PositiveSmallIntegerField()
+    # ratings = GenericRelation(Rating, related_query_name='rating')
+    # ratings = models.int()
     keyword1 = models.CharField(max_length=250)
     keyword2 = models.CharField(max_length=250)
     keyword3 = models.CharField(max_length=250)
@@ -51,7 +57,6 @@ class Deal(models.Model):
     latitude = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     deal_logo = models.CharField(max_length=1000, default='xxx')
-
     objects = models.Manager()
     #thumbnail
     #image
@@ -67,6 +72,8 @@ class Deal(models.Model):
         return ', '.join([s.name for s in self.sites.all()])
 
     sites_str.short_description = 'sites'
+
+    #Deal.objects.filter(ratings__isnull=False).order_by('ratings__average')
 
 
 @python_2_unicode_compatible

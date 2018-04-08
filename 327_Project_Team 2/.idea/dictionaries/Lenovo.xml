@@ -2,6 +2,8 @@
   <dictionary name="Lenovo">
     <words>
       <w>djangoorm</w>
+      <w>djangoratings</w>
+      <w>storages</w>
     </words>
   </dictionary>
 </component>

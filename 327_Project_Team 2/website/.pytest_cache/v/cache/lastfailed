@@ -1,1 +1,4 @@
-{}
+{
+  "deal/tests/test_models.py::TestModels::()::test_deal_exits": true,
+  "deal/tests/test_urls.py::TestUrls::()::test_account_url": true
+}

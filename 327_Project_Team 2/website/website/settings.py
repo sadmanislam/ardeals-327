@@ -19,7 +19,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = (
     'deal.apps.DealConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -34,9 +34,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     'rest_framework',
     'recommends',
-    'recommends.storages.djangoorm'
+    'recommends.storages.djangoorm',
+    'star_ratings'
+)
 
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

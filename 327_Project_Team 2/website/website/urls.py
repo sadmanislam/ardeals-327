@@ -21,11 +21,11 @@ from deal import views
 
 urlpatterns = {
     path('admin/', admin.site.urls),
-    # url(r'^deal/', include('deal.urls')),
     path('deal/', include('deal.urls'), name='home'),
-    url(r'^deal/info', views.DealList.as_view()),
-    url(r'^deal/info/(?P<pk>[0-9]+)/', views.DealDetail.as_view()),
-    url(r'^accounts/', include('allauth.urls')),
+    path('deal/info/', views.DealList.as_view(), name='info_json'),
+    url(r'^deal/info/(?P<pk>[0-9]+)/', views.DealDetail.as_view(), name='detail_json'),
+    path('accounts/', include('allauth.urls'), name='account'),
+
 }
 
 urlpatterns = format_suffix_patterns(urlpatterns)

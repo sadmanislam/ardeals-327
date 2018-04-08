@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import DealSerializer
-from .models import Deal
+from .models import Deal, Category
 from django.contrib.auth.decorators import login_required
 
 
@@ -62,6 +62,14 @@ def alldeals(request):
     all_deals = Deal.objects.all()
     context = {'all_deals': all_deals}
     return render(request, 'deal/deals.html', context)
+
+
+def apparels(request):
+    category = Category.objects.filter(name="Apparels")
+    all_deals = Deal.objects.all()
+    context = {'category': category,
+               'all_deals': all_deals}
+    return render(request, 'deal/category.html', context)
 
 
 def detail(request, deal_id):

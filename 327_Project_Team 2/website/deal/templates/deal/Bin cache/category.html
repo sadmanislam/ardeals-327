@@ -1,0 +1,14 @@
+				
+
+				<head>
+				 <meta charset="UTF-8">
+				</head>
+				<body>
+		{% for c in category %}
+			{% for deal in c.deal_set.all %}	
+		<p>{{ deal.publisher }}</p>
+			{% endfor %}
+		{% endfor %}
+
+				</ul>
+				</body>

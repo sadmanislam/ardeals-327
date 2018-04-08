@@ -1823,6 +1823,8 @@ ul.clients {
   width: 40.5%;
 }
 p.title {
+	font-style: italic;
+	 padding-top: 10%;
   font-size: 14px;
   color: #000;
 } 

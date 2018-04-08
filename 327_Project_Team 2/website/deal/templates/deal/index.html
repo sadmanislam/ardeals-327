@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
 	{% load staticfiles %}
 <title>Home | Deal Teal</title>
@@ -13,6 +15,8 @@
 <link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
+<link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
 <script>$(document).ready(function(c) {
@@ -177,12 +181,9 @@
 			<ul class="menu1">
 				<li class="item1"><a href="#" class="">What Deal To Go For?<img class="arrow-img" src="{% static 'images/arrow.png' %}" alt=""/> </a>
 					<ul class="cute" style="display: none; overflow: hidden;">
-						<li class="subitem1"><a href="food.html">Food </a></li>
-						<li class="subitem2"><a href="apparels.html">Apparels </a></li>
-						<li class="subitem2"><a href="apparels.html">Accessories </a></li>
-						<li class="subitem3"><a href="services.html">Services </a></li>
-						<li class="subitem3"><a href="electronics.html">Electronics </a></li>
-						<li class="subitem3"><a href="dailyessentials.html">Daily Essentials </a></li>
+						
+						<li class="subitem2"><a href="{% url 'deal:apparels' %}">Apparels </a></li>
+						
 					</ul>
 		         </li>
 			 </ul>
