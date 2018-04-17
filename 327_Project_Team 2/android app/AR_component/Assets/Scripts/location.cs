@@ -44,8 +44,8 @@ public class location : MonoBehaviour
 		switch (index) 
 		{
 		case 0:	//Deal X		
-			originalLatitude = 23.815103f;
-			originalLongitude = 90.425538f;
+			originalLatitude = 23.8151f;
+			originalLongitude = 90.4255f;
 			break;
 		case 1:	//Deal Y		
 			originalLatitude = 9.991285f;

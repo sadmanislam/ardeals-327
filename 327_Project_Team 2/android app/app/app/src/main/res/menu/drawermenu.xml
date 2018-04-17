@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home" android:title="Home" android:icon="@drawable/ic_home_black"/>
+    <item android:id="@+id/categories" android:title="Categories" android:icon="@drawable/ic_categories_black"/>
+    <item android:id="@+id/yourdeals" android:title="Your Deals" android:icon="@drawable/ic_yourdeals_black"/>
+    <item android:id="@+id/alldeals" android:title="All Deals" android:icon="@drawable/ic_alldeals_black"/>
+    <item android:id="@+id/about" android:title="About" android:icon="@drawable/ic_about_black"/>
+
+
+</menu>

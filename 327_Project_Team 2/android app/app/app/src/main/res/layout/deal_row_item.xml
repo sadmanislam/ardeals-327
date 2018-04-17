@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="5dp"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    >
+
+
+    <ImageView
+
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/loading_shape"
+        android:scaleType="centerCrop"
+        android:id="@+id/thumbnail"
+        android:src="@drawable/b"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:layout_margin="8dp"
+        android:orientation="vertical">
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/publisher"
+         android:text="Deal by: "
+         android:textSize="18sp"
+         android:textStyle="bold"
+         />
+
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category: "
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/description_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details: "
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Area: "
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
