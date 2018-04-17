@@ -387,11 +387,11 @@
 	<!-- 4.194-->
 				
 
-		<h3><u>4.1 Use Case: Add Any User Account </u></h3>
+		<h3><u>4.1 Use Case: Add Account </u></h3>
 		
 			<p style="margin:0;margin-left:60px;">
 				<span style="font-size:12px"> 4.1.1</span>  
-			     	Name: Add Any User Account
+			     	Name: Add Account
 					<div>
 						  Type: Primary<br>
 						  Actors Involved: Administrator
@@ -464,11 +464,11 @@
 
 	<!-- 4.2 -->
 		<br>
-		<h3><u>4.2 Use Case: Delete any User Account </u></h3>
+		<h3><u>4.2 Use Case: Delete Account </u></h3>
 		
 			<p style="margin:0;margin-left:60px;">
 				<span style="font-size:12px"> 4.2.1</span>  
-			     	Name: Delete any User Account 
+			     	Name: Delete Account 
 					<div>
 						  Type: Primary<br>
 						  Actors Involved: Administrator
@@ -545,14 +545,14 @@
 
 	<!-- 4.3 -->
 		<br>
-		<h3><u>4.3 Use Case: Create User Account </u></h3>
+		<h3><u>4.3 Use Case: Add User Account </u></h3>
 		
 			<p style="margin:0;margin-left:60px;">
 				<span style="font-size:12px"> 4.3.1</span>  
-			     	Name: Create Account
+			     	Name: Add User Account
 					<div>
 						  Type: Primary<br>
-						  Actors Involved: Paying User, User 
+						  Actors Involved: User 
 					</div>
 			</p>
 
@@ -613,10 +613,10 @@
 		
 			<p style="margin:0;margin-left:60px;">
 				<span style="font-size:12px"> 4.4.1</span>  
-			     	Name: Edit Account
+			     	Name: Edit User Account
 					<div>
 						  Type: Primary<br>
-						  Actors Involved: Paying User, User 
+						  Actors Involved: User 
 					</div>
 			</p>
 
@@ -695,10 +695,10 @@
 		
 			<p style="margin:0;margin-left:60px;">
 				<span style="font-size:12px"> 4.5.1</span>  
-			     	Name: Delete Account
+			     	Name: Delete User Account
 					<div>
 						  Type: Primary<br>
-						  Actors Involved: Paying User, User 
+						  Actors Involved: User 
 					</div>
 			</p>
 
@@ -771,93 +771,6 @@
 	<br>
 	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
 
-	<!-- 4.6 -->	
-		<br>
-		<h3><u>4.6 Use Case: Pay for Deals </u></h3>
-		
-			<p style="margin:0;margin-left:60px;">
-				<span style="font-size:12px"> 4.6.1</span>  
-			     	Name: Make Payment
-					<div>
-						  Type: Secondary<br>
-						  Actors Involved: Paying User
-					</div>
-			</p>
-
-			<p style="margin:0;margin-left:60px;">
-					<span style="font-size:12px">4.6.2</span>
-					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
-			</p>
-	    	<br>
-
-
-			<table style="width:90%;padding-left: 95px;" >
-				  <tr>
-				    <th>Actor Actions </th>
-				    <th>System Response</th> 				    
-				  </tr>
-
-				  <tr>
-				    <td> 1. Go to website or app</td>
-				    <td> 2. Serve Homepage</td> 				    
-				  </tr>
-
-				  <tr>
-				    <td> 3.	Choose Login Option	</td>
-				    <td> 4. Serve Login Page </td> 				    
-				  </tr>
-
-				   <tr>
-				    <td> 5. Enter Username and  Password </td>
-				    <td> 6. Validate against username and password and approve login </td> 				    
-				  </tr>
-
-				   <tr>
-				    <td> 7.	Select "Add Deals" Option	 </td>
-				    <td> 8.	Verify User has all dues cleared. If not, serve "Register with us" Page  </td> 				    
-				  </tr>			
-
-
-				  <tr>
-				    <td> 9.	Select "Register" Option	 </td>
-				    <td> 10.Serve the payment information form	</td> 				    
-				  </tr>
-
-				   <tr>
-				    <td> 11. User fills out the form with necessary details	</td>
-				    <td> 13. Asks for confirmation </td> 				    
-				  </tr>
-
-				   <tr>
-				    <td> 12. Clicks "Submit" </td>
-				    <td> 15. Adds information to Database </td> 				    
-				  </tr>
-
-				  <tr>
-				    <td> 14. Selects "Yes"	</td>
-				    <td> 16. Sends out confirmation message </td> 				    
-				  </tr>			   
-
-			</table>
-			<br>
-
-			<p style="margin:0;margin-left:60px;">
-					<span style="font-size:12px">4.6.3</span>
-					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
-			</p>
-
-		
-		    <ul style="list-style-type:none"> 
-				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
-				  <li> 11.1: Necessary fields left blank. Prompt user to provide all required information. </li>
-				  <li> 11.2: Information provided in field invalid. Send out "Please Check Again" message. </li>
-				  <li> 14.1: User chooses "No". Discard the form. </li>
-			</ul>
-
-	<!-- 4.6 END -->
-
-	<br>
-	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
 
 	<!-- 4.7 -->
 		<br>
@@ -868,7 +781,7 @@
 			     	Name: Add Deals 
 					<div>
 						  Type: Primary <br>
-						  Actors Involved: Paying User
+						  Actors Involved: User
 					</div>
 			</p>
 
@@ -951,7 +864,7 @@
 				    Name: Edit Deals 
 					<div>
 						Type: Primary <br>
-						Actors Involved: Paying User
+						Actors Involved: User
 					</div>
 			</p>
 
@@ -1039,7 +952,7 @@
 				     	Name: Delete Deals
 						<div>
 							  Type: Primary <br>
-							  Actors Involved: Paying User
+							  Actors Involved: User
 						</div>
 				</p>
 
@@ -1127,7 +1040,7 @@
 			     	Name: Select Location
 					<div>
 						  Type: Secondary <br>
-						  Actors Involved: Paying User, Users
+						  Actors Involved: Users
 					</div>
 			</p>
 
@@ -1198,7 +1111,7 @@
 			     	Name: Select Category
 					<div>
 						  Type: Secondary <br>
-						  Actors Involved: Paying User, Users
+						  Actors Involved: Users
 					</div>
 			</p>
 
@@ -1260,82 +1173,6 @@
 	<br>
 	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
 
-	<!-- 4.12 -->
-	        <br>
-	 		<h3><u>4.12 Use Case: Search for deals   </u></h3>
-		
-			<p style="margin:0;margin-left:60px;">
-				<span style="font-size:12px"> 4.12.1</span>  
-			     	Name: Search for deals
-					<div>
-						  Type: Primary <br>
-						  Actors Involved: Paying User, Users
-					</div>
-			</p>
-
-			<p style="margin:0;margin-left:60px;">
-					<span style="font-size:12px">4.12.2</span>
-					<span style="font-size:17px"><i><u>Typical Course of Events:</u></i></span>
-			</p>
-	    	<br>
-
-
-			<table style="width:90%;padding-left: 95px;" >
-				  <tr>
-				    <th>Actor Actions </th>
-				    <th>System Response</th> 				    
-				  </tr>
-
-				  <tr>
-				    <td> 1. Go to website or app</td>
-				    <td> 2. Serve Homepage</td> 				    
-				  </tr>
-
-				  <tr>
-				    <td> 3.	Choose Login Option	</td>
-				    <td> 4. Serve Login Page </td> 				    
-				  </tr>
-
-				   <tr>
-				    <td> 5. Enter Username and  Password </td>
-				    <td> 6. Validate against username and password and approve login </td> 				    
-				  </tr>
-
-				   <tr>
-				    <td> 7.	Select "View Deals" Option </td>
-				    <td> 8.	Serve All deals page </td> 				    
-				  </tr>			
-
-
-				  <tr>
-				    <td>  9. Select search bar	   </td>
-				    <td> 11. Show all deals relevant to entered keywords </td> 				    
-				  </tr>
-
-				    <tr>
-				    <td> 10. Enter Desired   Keywords </td>
-				    <td> </td> 				    
-				  </tr>
-				     
-			</table>
-			<br>
-
-			<p style="margin:0;margin-left:60px;">
-					<span style="font-size:12px">4.12.3</span>
-					<span style="font-size:17px"><i><u>Exceptions:</u></i></span>
-			</p>
-
-		
-
-		    <ul style="list-style-type:none"> 
-				  <li> 6.1: Username or Password Invalid. Send "Try Again" message. </li>
-				  <li> 11.1: No deals in relevance to entered keywords. Show "No deals to show" message. </li>				  
-			</ul>
-
-    <!-- 4.12 END -->
-
-	<br>
-	<table width="100%" style="opacity:.2" ><tr><td bgcolor="#F5F2F2"></td></tr></table>
 
     <!-- 4.13 -->
 	        <br>
@@ -1346,7 +1183,7 @@
 			     	Name: View all deals
 					<div>
 						  Type: Primary <br>
-						  Actors Involved: Paying User, Users
+						  Actors Involved: Users
 					</div>
 			</p>
 
@@ -1411,7 +1248,7 @@
 			     	Name: Expand deal 
 					<div>
 						  Type: Secondary   <br>
-						  Actors Involved: Paying User, Users
+						  Actors Involved: Users
 					</div>
 			</p>
 
@@ -1482,7 +1319,7 @@
 			     	Name: View deals in AR
 					<div style="margin-left: 68px">
 						  Type: Primary <br>
-						  Actors Involved: Paying User, Users
+						  Actors Involved: Users
 					</div>
 			</p>
 
